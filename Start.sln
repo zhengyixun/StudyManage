@@ -1,0 +1,103 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{CE1F602E-2057-4A48-974B-3F7E0F619706}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "后台", "后台\", "{2EBED0C4-58E4-4F69-8C78-A985244697AA}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{ce1f602e-2057-4a48-974b-3f7e0f619706}|CHJ.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58278"
+		Debug.AspNetCompiler.PhysicalPath = "后台\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58278\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58278"
+		Release.AspNetCompiler.PhysicalPath = "后台\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58278\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58278"
+		SlnRelativePath = "后台\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "接口", "接口\", "{77814C4A-0620-402D-8433-FAE00DDD9D75}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{ce1f602e-2057-4a48-974b-3f7e0f619706}|CHJ.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58287"
+		Debug.AspNetCompiler.PhysicalPath = "接口\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58287\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58287"
+		Release.AspNetCompiler.PhysicalPath = "接口\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58287\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58287"
+		SlnRelativePath = "接口\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "微信", "微信\", "{A88258BC-B506-4655-8D77-6DE2DD72A817}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{ce1f602e-2057-4a48-974b-3f7e0f619706}|CHJ.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58300"
+		Debug.AspNetCompiler.PhysicalPath = "微信\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58300\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58300"
+		Release.AspNetCompiler.PhysicalPath = "微信\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58300\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58300"
+		SlnRelativePath = "微信\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE1F602E-2057-4A48-974B-3F7E0F619706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1F602E-2057-4A48-974B-3F7E0F619706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1F602E-2057-4A48-974B-3F7E0F619706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1F602E-2057-4A48-974B-3F7E0F619706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EBED0C4-58E4-4F69-8C78-A985244697AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EBED0C4-58E4-4F69-8C78-A985244697AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EBED0C4-58E4-4F69-8C78-A985244697AA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EBED0C4-58E4-4F69-8C78-A985244697AA}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{77814C4A-0620-402D-8433-FAE00DDD9D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77814C4A-0620-402D-8433-FAE00DDD9D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77814C4A-0620-402D-8433-FAE00DDD9D75}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{77814C4A-0620-402D-8433-FAE00DDD9D75}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{A88258BC-B506-4655-8D77-6DE2DD72A817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88258BC-B506-4655-8D77-6DE2DD72A817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A88258BC-B506-4655-8D77-6DE2DD72A817}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88258BC-B506-4655-8D77-6DE2DD72A817}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99D84495-37DD-41A3-9700-8D7418FA8373}
+	EndGlobalSection
+EndGlobal

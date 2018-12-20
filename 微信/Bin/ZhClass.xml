@@ -1,0 +1,1714 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZhClass</name>
+    </assembly>
+    <members>
+        <member name="T:ZhClass.Li">
+            <summary>
+            子项
+            </summary>
+        </member>
+        <member name="M:ZhClass.Li.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            重写控件输出内容
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="P:ZhClass.Li.Text">
+            <summary>
+            直接显示的内容，如不为空，则忽略Field字段
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.Field">
+            <summary>
+            对应的字段，该属性可以是,分隔的一串数字
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.FieldLength">
+            <summary>
+            每个字段内容对应的显示长度，如Field有多个数字，这里也必须是对应的多个数字
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.FieldNormal">
+            <summary>
+            每个字段内容对应的如果没有内容情况下的替代字符，如Field有多个数字，这里也必须对应有多个字符串
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.FieldFormat">
+            <summary>
+            字段格式化字符串
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.StringFormat">
+            <summary>
+            字符串格式化字符串
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.Title">
+            <summary>
+            直接显示的标题内容，如有则忽略TitleField字段
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.TitleField">
+            <summary>
+            标题对应的字段，该属性可以是,分隔的一串数字
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.TitleFormat">
+            <summary>
+            标题字段格式化字符串
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.XmlNode">
+            <summary>
+            XML格式化节点名称
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.XmlAttribute">
+            <summary>
+            XML格式化节点属性
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.CssClass">
+            <summary>
+            样式
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.Style">
+            <summary>
+            要直接附加的样式
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.WipeHtml">
+            <summary>
+            是否要去除HTML代码
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.IsBr">
+            <summary>
+            是否要显示内容的回车换行
+            </summary>
+        </member>
+        <member name="P:ZhClass.Li.Other">
+            <summary>
+            其他要附加在Li上的内容
+            </summary>
+        </member>
+        <member name="T:ZhClass.LinkAge">
+            <summary>
+            无级连动下拉框控件
+            </summary>
+        </member>
+        <member name="M:ZhClass.LinkAge.OnPreRender(System.EventArgs)">
+            <summary>
+            OnPreRender
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ZhClass.LinkAge.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Render
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:ZhClass.LinkAge.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            LoadPostData
+            </summary>
+            <param name="postDataKey"></param>
+            <param name="postCollection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.LinkAge.RaisePostDataChangedEvent">
+            <summary>
+            RaisePostDataChangedEvent
+            </summary>
+        </member>
+        <member name="M:ZhClass.LinkAge.getInner(System.String,System.String,System.Boolean,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取LinkAge主体内容
+            </summary>
+            <param name="uniqueid">控件名称</param>
+            <param name="datatable">要操作的表名</param>
+            <param name="isselectfather">是否可以选择大类</param>
+            <param name="s_value">默认值</param>
+            <param name="fathertext">大类默认文本</param>
+            <param name="suntext">小类默认文本</param>
+            <param name="beforefun">附加的完成前的JS方法</param>
+            <param name="afterfun">附加的完成后的JS方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.LinkAge.setOption(System.Collections.Generic.Dictionary{System.String,System.String},System.Int32,System.String[],System.String[],System.Boolean,System.String,System.String)">
+            <summary>
+            根据参数获取相应的option
+            </summary>
+            <param name="input">给进的字典</param>
+            <param name="index">当前字典的索引项</param>
+            <param name="s_text">当前选中的全部文本</param>
+            <param name="decomposition">当前选中的全部值</param>
+            <param name="isselectfather">是否可以选择大类</param>
+            <param name="fathertext">大类默认值 不为空时，要为第一个大类添加一个默认首选项，其value为空，仅第一项时有效</param>
+            <param name="suntext">小类首项内容 不为空时，要为当前小类增加一个默认值，需要string.format，其值由IsSelectFather决定，false是为空，true时为大类的值，非第一项时有效</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.LinkAge.Decomposition(System.String)">
+            <summary>
+            分解默认值
+            </summary>
+            <param name="s_value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ZhClass.LinkAge.DataTable">
+            <summary>
+            要操作的表名
+            </summary>
+        </member>
+        <member name="P:ZhClass.LinkAge.IsSelectFather">
+            <summary>
+            是否可以选择大类
+            </summary>
+        </member>
+        <member name="P:ZhClass.LinkAge.FatherText">
+            <summary>
+            大类默认值
+            </summary>
+        </member>
+        <member name="P:ZhClass.LinkAge.SunText">
+            <summary>
+            小类首项内容
+            </summary>
+        </member>
+        <member name="P:ZhClass.LinkAge.Text">
+            <summary>
+            返回文本
+            </summary>
+        </member>
+        <member name="P:ZhClass.LinkAge.Value">
+            <summary>
+            返回值
+            </summary>
+        </member>
+        <member name="P:ZhClass.LinkAge.BeforeFun">
+            <summary>
+            之前处理函数
+            </summary>
+        </member>
+        <member name="P:ZhClass.LinkAge.AfterFun">
+            <summary>
+            之后处理函数
+            </summary>
+        </member>
+        <member name="T:ZhClass.ZhImg">
+            <summary>
+            图像处理类
+            </summary>
+        </member>
+        <member name="M:ZhClass.ZhImg.Thumbnail(System.String,System.Int32,System.Int32,System.Drawing.Color,System.String)">
+            <summary>
+            为指定的图片生成缩图
+            <para>color != null，则不变形</para>
+            </summary>
+            <param name="sourcepath">源图的完整硬盘路径，包括文件名</param>
+            <param name="maxwidth">缩图宽度</param>
+            <param name="maxheight">缩图高度</param>
+            <param name="color">指定背景色，可传null</param>
+            <param name="bmpath">缩图的完整硬盘目录，以/结束，不包括文件名</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:ZhClass.ZhImg.HopeImage(System.String,System.Int32,System.Int32)">
+            <summary>
+            HopeImage 根据指定的宽高,得到显示的宽高
+            </summary>
+            <param name="filepath">完整的硬盘路径，包括后缀</param>
+            <param name="width">希望宽度</param>
+            <param name="height">希望高度</param>
+        </member>
+        <member name="M:ZhClass.ZhImg.GetImg(System.String)">
+            <summary>
+            获得指定图片的宽高
+            </summary>
+            <param name="filepath">完整的硬盘路径，包括后缀</param>
+            <returns>图片宽高</returns>
+        </member>
+        <member name="M:ZhClass.ZhImg.GetStream(System.Byte[])">
+            <summary>
+            将二维数组转成图像
+            </summary>
+            <param name="m">二维数组</param>
+            <returns>图像流</returns>
+        </member>
+        <member name="T:ZhClass.VerifyCodeMsg">
+            <summary>
+            本类提供验证码内容
+            </summary>
+        </member>
+        <member name="M:ZhClass.VerifyCodeMsg.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            ProcessRequest
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="P:ZhClass.VerifyCodeMsg.IsReusable">
+            <summary>
+            IsReusable
+            </summary>
+        </member>
+        <member name="T:ZhClass.VerifyCode">
+            <summary>
+            验证码框架
+            </summary>
+        </member>
+        <member name="M:ZhClass.VerifyCode.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            重写控件输出
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="P:ZhClass.VerifyCode.Length">
+            <summary>
+            验证码长度
+            </summary>
+        </member>
+        <member name="P:ZhClass.VerifyCode.Width">
+            <summary>
+            图片宽度
+            </summary>
+        </member>
+        <member name="P:ZhClass.VerifyCode.Height">
+            <summary>
+            图片高度
+            </summary>
+        </member>
+        <member name="P:ZhClass.VerifyCode.Background">
+            <summary>
+            背景色
+            </summary>
+        </member>
+        <member name="P:ZhClass.VerifyCode.Color">
+            <summary>
+            前景色
+            </summary>
+        </member>
+        <member name="P:ZhClass.VerifyCode.Size">
+            <summary>
+            文字大小
+            </summary>
+        </member>
+        <member name="P:ZhClass.VerifyCode.Bold">
+            <summary>
+            是否粗体
+            </summary>
+        </member>
+        <member name="P:ZhClass.VerifyCode.Top">
+            <summary>
+            顶点
+            </summary>
+        </member>
+        <member name="P:ZhClass.VerifyCode.Left">
+            <summary>
+            左边间距
+            </summary>
+        </member>
+        <member name="P:ZhClass.VerifyCode.Border">
+            <summary>
+            边框
+            </summary>
+        </member>
+        <member name="P:ZhClass.VerifyCode.Alt">
+            <summary>
+            提示语
+            </summary>
+        </member>
+        <member name="T:Extensions">
+            <summary>
+            定义扩展类
+            </summary>
+        </member>
+        <member name="M:Extensions.Md5(System.String)">
+            <summary>
+            转出md5字符串
+            </summary>
+            <param name="str">要转换的字符串</param>
+            <returns>转换后的字符串</returns>
+        </member>
+        <member name="M:Extensions.DESEncrypt(System.String,System.String)">
+            <summary>
+            DES加密
+            </summary>
+            <param name="pToEncrypt">要加密的字符串</param>
+            <param name="sKey">密钥,必须是8位</param>
+            <returns>加密后的字符串</returns>
+        </member>
+        <member name="M:Extensions.DESDecrypt(System.String,System.String)">
+            <summary>
+            DES解密
+            </summary>
+            <param name="pToDecrypt">要解密的字符串</param>
+            <param name="sKey">密钥,必须是8位</param>
+            <returns>已解密的字符串</returns>
+        </member>
+        <member name="M:Extensions.JsToHtml(System.String)">
+            <summary>
+            转出escape转义过的字符串
+            </summary>
+            <param name="source">源字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.AppointLen(System.String,System.Int32,System.String)">
+            <summary>
+            返回指定长度的字符串
+            </summary>
+            <param name="inputstring">待处理的字符串</param>
+            <param name="l">要显示几个字符</param>
+            <param name="behind">如超长,需显示在后面的内容</param>
+            <returns>处理完成的字符串</returns>
+        </member>
+        <member name="M:Extensions.HtmlEncode(System.String)">
+            <summary>
+            转出HTML转义过的字符串
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.HtmlDecode(System.String)">
+            <summary>
+            转出HTML转义回来的字符串
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.toColor(System.String)">
+            <summary>
+            转换成颜色
+            </summary>
+            <param name="input">以#开头的16进制颜色字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.ToHtml(System.String)">
+            <summary>
+            转换回车与换行
+            </summary>
+            <param name="dbstr">要转换的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.WipeHtml(System.String)">
+            <summary>
+            去除HTML格式
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.IsChina(System.String)">
+            <summary>
+            获取是否中文
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.IsNullOrEmpty(System.String)">
+            <summary>
+            获取是否为空或为null
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.AddFirst``2(System.Collections.Generic.Dictionary{``0,``1},System.Collections.Generic.Dictionary{``0,``1})">
+            <summary>
+            添加到字典顶部
+            </summary>
+            <param name="obj"></param>
+            <param name="second">要增加的序列</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.Cast``1(System.Object,``0)">
+            <summary>
+            转换匿名类型
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="obj">匿名对像装箱结果</param>
+            <param name="sample">对像值</param>
+            <returns>var newobj = obj.Cast(new {first=..., last=...})</returns>
+        </member>
+        <member name="M:Extensions.toString(System.Object)">
+            <summary>
+            对象转int
+            </summary>
+            <param name="input">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.toString(System.Object,System.String)">
+            <summary>
+            对象转int
+            </summary>
+            <param name="input">对象</param>
+            <param name="dvalue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.toString(System.Object,System.Int32)">
+            <summary>
+            对象转int
+            </summary>
+            <param name="input">对象</param>
+            <param name="dvalue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.toString(System.Object,System.Single)">
+            <summary>
+            对象转float
+            </summary>
+            <param name="input">对象</param>
+            <param name="dvalue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.toString(System.Object,System.Double)">
+            <summary>
+            对象转double
+            </summary>
+            <param name="input">对象</param>
+            <param name="dvalue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.toString(System.Object,System.Decimal)">
+            <summary>
+            对象转decimal 
+            </summary>
+            <param name="input">对象</param>
+            <param name="dvalue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.toString(System.Object,System.DateTime)">
+            <summary>
+            对象转datetime
+            </summary>
+            <param name="input">对象</param>
+            <param name="dvalue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.toString(System.Object,System.Boolean)">
+            <summary>
+            对象转bool
+            </summary>
+            <param name="input">对象</param>
+            <param name="dvalue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.valueToString(System.Web.UI.WebControls.ListControl)">
+            <summary>
+            获取复选框的值
+            </summary>
+            <param name="listname">CheckBoxList名称</param>
+            <returns>以,分开的字符串</returns>
+        </member>
+        <member name="M:Extensions.toValue(System.Web.UI.WebControls.ListControl,System.String)">
+            <summary>
+            绑定相应的复选框
+            </summary>
+            <param name="listname">复选框列表名称</param>
+            <param name="str">选中的字符串</param>
+        </member>
+        <member name="M:Extensions.valueToString(System.Web.UI.HtmlControls.HtmlInputRadioButton[])">
+            <summary>
+            给出单选框的最终选定值
+            </summary>
+            <param name="rb">单选框集合</param>
+            <returns>object对像,要自己拆箱</returns>
+        </member>
+        <member name="M:Extensions.toValue(System.Web.UI.HtmlControls.HtmlInputRadioButton[],System.String)">
+            <summary>
+            设置单选框的最终选定值
+            </summary>
+            <param name="rb">单选框集</param>
+            <param name="dvalue">默认值</param>
+        </member>
+        <member name="M:Extensions.valueToString(System.Web.UI.HtmlControls.HtmlInputCheckBox[])">
+            <summary>
+            给出复选框的最终选定值
+            </summary>
+            <param name="cb">复选框集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.toValue(System.Web.UI.HtmlControls.HtmlInputCheckBox[],System.String)">
+            <summary>
+            设置复选框的最终选定值
+            </summary>
+            <param name="cb">复选框集</param>
+            <param name="dvalue">默认值</param>
+        </member>
+        <member name="M:Extensions.getRequest(System.String)">
+            <summary>
+            获取地址栏string类型参数
+            </summary>
+            <param name="key">参数名称</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,Extensions.GoTo)">
+            <summary>
+            获取地址栏string类型参数,没有就执行委托方法
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="functo">委托方法</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.String)">
+            <summary>
+            获取地址栏string类型参数,没有就等于默认值
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.String,Extensions.GoTo)">
+            <summary>
+            获取地址栏string类型参数,等同于默认值就执行委托方法
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <param name="functo">委托方法</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.Int32)">
+            <summary>
+            获取地址栏参数集合
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.Int32,Extensions.GoTo)">
+            <summary>
+            获取地址栏int类型参数,等同于默认值就执行委托方法
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <param name="functo">委托方法</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.Single)">
+            <summary>
+            获取地址栏参数集合
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.Single,Extensions.GoTo)">
+            <summary>
+            获取地址栏float类型参数,等同于默认值就执行委托方法
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <param name="functo">委托方法</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.Double)">
+            <summary>
+            获取地址栏参数集合
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.Double,Extensions.GoTo)">
+            <summary>
+            获取地址栏double类型参数,等同于默认值就执行委托方法
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <param name="functo">委托方法</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.Decimal)">
+            <summary>
+            获取地址栏参数集合
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.Decimal,Extensions.GoTo)">
+            <summary>
+            获取地址栏decimal类型参数,等同于默认值就执行委托方法
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <param name="functo">委托方法</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.DateTime)">
+            <summary>
+            获取地址栏参数集合
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.DateTime,Extensions.GoTo)">
+            <summary>
+            获取地址栏datetime类型参数,等同于默认值就执行委托方法
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <param name="functo">委托方法</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.Boolean)">
+            <summary>
+            获取地址栏参数集合
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.String,System.Boolean,Extensions.GoTo)">
+            <summary>
+            获取地址栏datetime类型参数,等同于默认值就执行委托方法
+            </summary>
+            <param name="key">参数名称</param>
+            <param name="dvalue">默认值</param>
+            <param name="functo">委托方法</param>
+            <returns>参数内容</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            从地址栏拿直接参数
+            </summary>
+            <param name="request">Request.QueryString</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.Collections.Specialized.NameValueCollection,System.Int32)">
+            <summary>
+            从地址栏拿直接int型参数
+            </summary>
+            <param name="request">Request.QueryString</param>
+            <param name="dvalue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extensions.getRequest(System.Collections.Specialized.NameValueCollection,System.Int32,Extensions.GoTo)">
+            <summary>
+            从地址栏拿直接int型参数,没有就执行委托方法
+            </summary>
+            <param name="request">Request.QueryString</param>
+            <param name="dvalue">默认值</param>
+            <param name="functo">委托方法</param>
+            <returns></returns>
+        </member>
+        <member name="T:Extensions.GoTo">
+            <summary>
+            委托方法
+            </summary>
+        </member>
+        <member name="T:ZhClass.ZhListULEventHandler">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:ZhClass.ZhListULEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ZhClass.ZhListULEventArgs.#ctor(ZhClass.ZhListUL)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="P:ZhClass.ZhListULEventArgs.Item">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ZhClass.SqlPar">
+            <summary>
+            SQL查询参数类
+            </summary>
+        </member>
+        <member name="F:ZhClass.SqlPar.m_sql">
+            <summary>
+            查询语句内部变量
+            </summary>
+        </member>
+        <member name="F:ZhClass.SqlPar.m_csql">
+            <summary>
+            查询总数语句内部变量
+            </summary>
+        </member>
+        <member name="M:ZhClass.SqlPar.SetParName(System.String)">
+            <summary>
+            设置参数集
+            </summary>
+            <param name="parnamestring">参数字符串</param>
+        </member>
+        <member name="M:ZhClass.SqlPar.SetParValue(System.Object[])">
+            <summary>
+            设置参数值
+            </summary>
+            <param name="parvalueobject">参数值数组</param>
+        </member>
+        <member name="M:ZhClass.SqlPar.SetParType(System.String)">
+            <summary>
+            设置参数类型集
+            </summary>
+            <param name="partypestring">参数类型字符串</param>
+        </member>
+        <member name="M:ZhClass.SqlPar.Message">
+            <summary>
+            返回参数的全部信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ZhClass.SqlPar.Parameters">
+            <summary>
+            参数集合
+            </summary>
+        </member>
+        <member name="P:ZhClass.SqlPar.IsPaging">
+            <summary>
+            是否分页
+            </summary>
+        </member>
+        <member name="P:ZhClass.SqlPar.Sql">
+            <summary>
+            返回查询语句
+            </summary>
+        </member>
+        <member name="P:ZhClass.SqlPar.CSql">
+            <summary>
+            返回查询总数语句
+            </summary>
+        </member>
+        <member name="T:ZhClass.SqlPar.Parameter">
+            <summary>
+            参数实体类
+            </summary>
+        </member>
+        <member name="M:ZhClass.SqlPar.Parameter.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">参数名称</param>
+        </member>
+        <member name="M:ZhClass.SqlPar.Parameter.#ctor(System.String,System.Object)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">参数名称</param>
+            <param name="value">参数值</param>
+        </member>
+        <member name="M:ZhClass.SqlPar.Parameter.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">参数名称</param>
+            <param name="type">参数类型</param>
+        </member>
+        <member name="M:ZhClass.SqlPar.Parameter.#ctor(System.String,System.Object,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="name">参数名称</param>
+            <param name="value">参数值</param>
+            <param name="type">参数类型</param>
+        </member>
+        <member name="P:ZhClass.SqlPar.Parameter.Name">
+            <summary>
+            参数名称
+            </summary>
+        </member>
+        <member name="P:ZhClass.SqlPar.Parameter.Value">
+            <summary>
+            参数值
+            </summary>
+        </member>
+        <member name="P:ZhClass.SqlPar.Parameter.Type">
+            <summary>
+            参数类型
+            </summary>
+        </member>
+        <member name="T:ZhClass.SqlPar.SqlParComparer">
+            <summary>
+            参数实体比较类
+            </summary>
+        </member>
+        <member name="M:ZhClass.SqlPar.SqlParComparer.System#Collections#Generic#IEqualityComparer{ZhClass#SqlPar#Parameter}#Equals(ZhClass.SqlPar.Parameter,ZhClass.SqlPar.Parameter)">
+            <summary>
+            比较传入的两个参数实体类是否相同
+            </summary>
+            <param name="x">要比较的源</param>
+            <param name="y">要比较的实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.SqlPar.SqlParComparer.System#Collections#Generic#IEqualityComparer{ZhClass#SqlPar#Parameter}#GetHashCode(ZhClass.SqlPar.Parameter)">
+            <summary>
+            获得实体类的哈希值
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ZhClass.SqlParComparerToSentPage">
+            <summary>
+            查询参数比较类
+            </summary>
+        </member>
+        <member name="M:ZhClass.SqlParComparerToSentPage.System#Collections#Generic#IEqualityComparer{ZhClass#SqlPar}#Equals(ZhClass.SqlPar,ZhClass.SqlPar)">
+            <summary>
+            比较传入的两个参数实体类是否相同
+            </summary>
+            <param name="x">要比较的源</param>
+            <param name="y">要比较的实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.SqlParComparerToSentPage.System#Collections#Generic#IEqualityComparer{ZhClass#SqlPar}#GetHashCode(ZhClass.SqlPar)">
+            <summary>
+            获得实体类的哈希值
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ZhClass.CacheType">
+            <summary>
+            缓存获取枚举
+            </summary>
+        </member>
+        <member name="F:ZhClass.CacheType.SingleTop">
+            <summary>
+            取其单个上级
+            </summary>
+        </member>
+        <member name="F:ZhClass.CacheType.MultiTop">
+            <summary>
+            取其全部上级
+            </summary>
+        </member>
+        <member name="F:ZhClass.CacheType.MultiBottom">
+            <summary>
+            取其全部下级
+            </summary>
+        </member>
+        <member name="F:ZhClass.CacheType.MultiMiddle">
+            <summary>
+            取其全部平级
+            </summary>
+        </member>
+        <member name="F:ZhClass.CacheType.MultiMiddleNotContainingThis">
+            <summary>
+            取其全部不包含自己的平级
+            </summary>
+        </member>
+        <member name="F:ZhClass.CacheType.OneName">
+            <summary>
+            取自己的名称
+            </summary>
+        </member>
+        <member name="F:ZhClass.CacheType.OneNameFull">
+            <summary>
+            取自己的完整名称
+            </summary>
+        </member>
+        <member name="F:ZhClass.CacheType.ValueOne">
+            <summary>
+            取传入值的默认选项
+            </summary>
+        </member>
+        <member name="T:ZhClass.Lia">
+            <summary>
+            子项
+            </summary>
+        </member>
+        <member name="M:ZhClass.Lia.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            重写控件输出内容
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="P:ZhClass.Lia.Text">
+            <summary>
+            直接显示的内容，如不为空，则忽略Field字段
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.Field">
+            <summary>
+            对应的字段，该属性可以是,分隔的一串数字
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.FieldLength">
+            <summary>
+            每个字段内容对应的显示长度，如Field有多个数字，这里也必须是对应的多个数字
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.FieldNormal">
+            <summary>
+            每个字段内容对应的如果没有内容情况下的替代字符，如Field有多个数字，这里也必须对应有多个字符串
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.FieldFormat">
+            <summary>
+            字段格式化字符串
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.StringFormat">
+            <summary>
+            字符串格式化字符串
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.Title">
+            <summary>
+            直接显示的标题内容，如有则忽略TitleField字段
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.TitleField">
+            <summary>
+            标题对应的字段，该属性可以是,分隔的一串数字
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.TitleFormat">
+            <summary>
+            标题字段格式化字符串
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.XmlNode">
+            <summary>
+            XML格式化节点名称
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.XmlAttribute">
+            <summary>
+            XML格式化节点属性
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.LinkXmlNode">
+            <summary>
+            链接XML格式化节点名
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.LinkXmlAttribute">
+            <summary>
+            链接XML属性名
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.Href">
+            <summary>
+            链接地址
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.HrefFormat">
+            <summary>
+            链接字段格式化字符串
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.HrefField">
+            <summary>
+            链接地址对应的字段，该属性可以是,分隔的一串数字
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.ACssClass">
+            <summary>
+            链接的样式
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.Target">
+            <summary>
+            链接打开框架
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.AStyle">
+            <summary>
+            链接手写样式
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.CssClass">
+            <summary>
+            样式
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.Style">
+            <summary>
+            要直接附加的样式
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.WipeHtml">
+            <summary>
+            是否要去除HTML代码
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.IsBr">
+            <summary>
+            是否要显示内容的回车换行
+            </summary>
+        </member>
+        <member name="P:ZhClass.Lia.Other">
+            <summary>
+            其他要附加在Li上的内容
+            </summary>
+        </member>
+        <member name="T:ZhClass.ZhListUL">
+            <summary>
+            模板容器
+            </summary>
+        </member>
+        <member name="M:ZhClass.ZhListUL.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            重新输入内容
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="P:ZhClass.ZhListUL.ItemIndex">
+            <summary>
+            项索引
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhListUL.CssClass">
+            <summary>
+            项样式
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhListUL.DataItem">
+            <summary>
+            项数据
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhListUL.IsTable">
+            <summary>
+            是否表格显示
+            </summary>
+        </member>
+        <member name="T:ZhClass.LiCheckBox">
+            <summary>
+            子项
+            </summary>
+        </member>
+        <member name="M:ZhClass.LiCheckBox.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            重写控件输出内容
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:ZhClass.LiCheckBox.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            回发事件
+            </summary>
+            <param name="postDataKey">键值</param>
+            <param name="postCollection">回发值集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.LiCheckBox.RaisePostDataChangedEvent">
+            <summary>
+            回发事件参数
+            </summary>
+        </member>
+        <member name="P:ZhClass.LiCheckBox.CssClass">
+            <summary>
+            样式
+            </summary>
+        </member>
+        <member name="P:ZhClass.LiCheckBox.Checked">
+            <summary>
+            是否选中
+            </summary>
+        </member>
+        <member name="P:ZhClass.LiCheckBox.Field">
+            <summary>
+            对应的字段
+            </summary>
+        </member>
+        <member name="P:ZhClass.LiCheckBox.Value">
+            <summary>
+            复选框的值
+            </summary>
+        </member>
+        <member name="P:ZhClass.LiCheckBox.Disabled">
+            <summary>
+            是否禁用
+            </summary>
+        </member>
+        <member name="P:ZhClass.LiCheckBox.StringFormat">
+            <summary>
+            格式化字符串
+            </summary>
+        </member>
+        <member name="T:ZhClass.Javascripts">
+            <summary>
+            Js处理类
+            </summary>
+        </member>
+        <member name="M:ZhClass.Javascripts.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            ProcessRequest
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="P:ZhClass.Javascripts.IsReusable">
+            <summary>
+            IsReusable
+            </summary>
+        </member>
+        <member name="T:ZhClass.SqlXml">
+            <summary>
+            对XML的一些操作
+            </summary>
+        </member>
+        <member name="M:ZhClass.SqlXml.CatchXml(System.String[])">
+            <summary>
+            缓存XML
+            </summary>
+            <param name="name">xml文件名,不带后缀</param>
+            <returns>整个目录树</returns>
+        </member>
+        <member name="M:ZhClass.SqlXml.GetSql(System.String,System.String)">
+            <summary>
+            获取sql语句,不支持orderby节点
+            </summary>
+            <param name="xmlname">文件名</param>
+            <param name="nodename">节点名</param>
+        </member>
+        <member name="M:ZhClass.SqlXml.GetSqlPage(System.String,System.String)">
+            <summary>
+            获取分页sql语句
+            </summary>
+            <param name="xmlname">文件名</param>
+            <param name="nodename">节点名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.SqlXml.GetSearchSql(System.String,System.String,System.Int32[])">
+            <summary>
+            获取不确定条件sql语句,不支持text类型字段
+            </summary>
+            <param name="xmlname">文件名</param>
+            <param name="nodename">节点名</param>
+            <param name="condition">条件字符串</param>
+        </member>
+        <member name="M:ZhClass.SqlXml.GetSearchSqlPage(System.String,System.String,System.Int32[])">
+            <summary>
+            获取不确定条件分页sql语句,不支持text类型字段
+            </summary>
+            <param name="xmlname">文件名</param>
+            <param name="nodename">节点名</param>
+            <param name="condition">条件字符串</param>
+        </member>
+        <member name="M:ZhClass.SqlXml.GetXmlText(System.String,System.String)">
+            <summary>
+            根据innerXml,获取text属性
+            </summary>
+            <param name="nodename">节点名称</param>
+            <param name="key">节点内的值</param>
+            <returns>text属性值</returns>
+        </member>
+        <member name="M:ZhClass.SqlXml.GetXmlText(System.String,System.String,System.String)">
+            <summary>
+            根据innerXml,获取指定的属性
+            </summary>
+            <param name="nodename">节点名称</param>
+            <param name="key">节点内的值</param>
+            <param name="attributename">属性名称</param>
+            <returns>其它属性值</returns>
+        </member>
+        <member name="M:ZhClass.SqlXml.GetInnerXml(System.String,System.String)">
+            <summary>
+            根据text属性,获取innerXml
+            </summary>
+            <param name="nodename">节点名称</param>
+            <param name="text">子节点名称</param>
+            <returns>内容</returns>
+        </member>
+        <member name="M:ZhClass.SqlXml.GetAttributeValue(System.String,System.String,System.String)">
+            <summary>
+            根据text属性,获取innerXml
+            </summary>
+            <param name="nodename">节点名称</param>
+            <param name="text">子节点名称</param>
+            <param name="attributename">属性名称</param>
+            <returns>其它属性值</returns>
+        </member>
+        <member name="M:ZhClass.SqlXml.GetXmlArray(System.String)">
+            <summary>
+            获取XML数组
+            </summary>
+            <param name="nodename">xml节点名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.SqlXml.GetXmlArray(System.String,System.String)">
+            <summary>
+            获取XML数组
+            </summary>
+            <param name="nodename">xml节点名</param>
+            <param name="attributename">xml节点属性名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.SqlXml.SetXmlForList(System.Web.UI.WebControls.ListControl,System.String,System.String)">
+            <summary>
+            绑定到ListControl控件
+            </summary>
+            <param name="list">List控件名称</param>
+            <param name="nodename">节点名称</param>
+            <param name="defaultvalue">默认值</param>
+        </member>
+        <member name="M:ZhClass.SqlXml.SetXmlForList(System.Web.UI.HtmlControls.HtmlSelect,System.String,System.String)">
+            <summary>
+            绑定到Select控件
+            </summary>
+            <param name="list">Select控件名称</param>
+            <param name="nodename">节点名称</param>
+            <param name="defaultvalue">默认值</param>
+        </member>
+        <member name="M:ZhClass.SqlXml.CacheSql(ZhClass.SqlPar,System.String,System.String)">
+            <summary>
+            缓存SQL表中记录
+            </summary>
+            <param name="par">SQL结构体,如确保已存在,则可传null</param>
+            <param name="dbname">web.config中定义的数据库名称</param>
+            <param name="tbname">关联的数据库表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.SqlXml.GetCacheArray(System.String,System.String,System.String,ZhClass.CacheType)">
+            <summary>
+            获取缓存中的数组
+            </summary>
+            <param name="dbname">缓存数据库名</param>
+            <param name="tbname">缓存表名</param>
+            <param name="value">默认值</param>
+            <param name="ct">缓存获取枚举</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.SqlXml.SetXmlForCacheOption(System.Web.UI.HtmlControls.HtmlSelect,System.String,System.String,System.String,ZhClass.CacheType)">
+            <summary>
+            将CacheArray绑定到select控件
+            </summary>
+            <param name="list">下拉框</param>
+            <param name="dbname">缓存数据库名</param>
+            <param name="tbname">缓存表名</param>
+            <param name="value">默认值</param>
+            <param name="ct">缓存获取枚举</param>
+        </member>
+        <member name="M:ZhClass.SqlXml.setSqlParameter(System.Text.RegularExpressions.MatchCollection)">
+            <summary>
+            将正则结果转换为List
+            </summary>
+            <param name="par">正则结果</param>
+            <returns></returns>
+        </member>
+        <member name="T:ZhClass.DB">
+            <summary>
+            数据库的操作
+            </summary>
+        </member>
+        <member name="M:ZhClass.DB.#ctor(System.String)">
+            <summary>
+            构造函数,第一项是sql连接字符串
+            </summary>
+        </member>
+        <member name="M:ZhClass.DB.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ZhClass.DB.ExeSql(ZhClass.SqlPar)">
+            <summary>
+            仅执行Insert与Update语句,返回影响条数
+            </summary>
+            <param name="par">SQL结构体</param>
+        </member>
+        <member name="M:ZhClass.DB.ExeSqlOut(ZhClass.SqlPar)">
+            <summary>
+            仅执行Insert与Update语句,返回影响条数
+            </summary>
+            <param name="par">SQL结构体</param>
+        </member>
+        <member name="M:ZhClass.DB.GetScalar(ZhClass.SqlPar)">
+            <summary>
+            获取第一行第一列
+            </summary>
+            <param name="par">SQL结构体</param>
+        </member>
+        <member name="M:ZhClass.DB.GetRow(ZhClass.SqlPar)">
+            <summary>
+            获取一行数据
+            </summary>
+            <param name="par">SQL结构体</param>
+        </member>
+        <member name="M:ZhClass.DB.GetField(ZhClass.SqlPar)">
+            <summary>
+            获取一列数据
+            </summary>
+            <param name="par">SQL结构体</param>
+        </member>
+        <member name="M:ZhClass.DB.GetArray(ZhClass.SqlPar)">
+            <summary>
+            获取二维数组
+            </summary>
+            <param name="par">SQL结构体</param>
+        </member>
+        <member name="M:ZhClass.DB.GetXml(ZhClass.SqlPar,System.String[])">
+            <summary>
+            获取Xml字符串
+            </summary>
+            <param name="par">SQL结构体</param>
+            <param name="rootname">根节点名称</param>
+        </member>
+        <member name="M:ZhClass.DB.ExeSqlSaving(System.String,System.Object[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="saving">存储过程名</param>
+            <param name="parvalue">存储过程参数</param>
+        </member>
+        <member name="M:ZhClass.DB.GetData(System.Web.UI.WebControls.ListControl,ZhClass.SqlPar)">
+            <summary>
+            绑定到ListControl控件
+            </summary>
+            <param name="listControl">ListControl的名称</param>
+            <param name="par">SQL结构体</param>
+        </member>
+        <member name="M:ZhClass.DB.GetData(System.Web.UI.HtmlControls.HtmlSelect,ZhClass.SqlPar,System.Int32[])">
+            <summary>
+            绑定到Select控件
+            </summary>
+            <param name="select">Select的名称</param>
+            <param name="par">SQL结构体</param>
+            <param name="turn">排序 0:value; 1:text; 2:默认值(0:未选中;1:选中)</param>
+        </member>
+        <member name="M:ZhClass.DB.setPar(System.Data.SqlClient.SqlCommand,System.Collections.Generic.List{ZhClass.SqlPar.Parameter})">
+            <summary>
+            添加内部参数
+            </summary>
+            <param name="Comm">Comm</param>
+            <param name="pars">参数实体类</param>
+            传入参数是每个函数中新生成的,或者是参数调进来的
+            如果是新生成的,那么变量作用域只存在于父函数体内,因此不会存在共享
+            如果是参数调进来的,那么因为该类是实例化的,会为每个对像实例化,所以也不会存在共享
+        </member>
+        <member name="T:ZhClass.ZhList">
+            <summary>
+            自定义列表控件
+            </summary>
+        </member>
+        <member name="M:ZhClass.ZhList.GetUrl(System.Int32)">
+            <summary>
+            获取指定页的链接
+            </summary>
+            <param name="currentpage">页码</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.ZhList.SetDataSource(System.String)">
+            <summary>
+            从ListData.config中读取指定的节点，无分页
+            </summary>
+            <param name="xmlnodename">节点名称</param>
+        </member>
+        <member name="M:ZhClass.ZhList.SetDataSource(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            从XML源中读取指定节点的数据，是否分页取决于控件本身的IsPaging和IsTopPaging属性
+            </summary>
+            <param name="xe">xml源</param>
+            <param name="xmlnodename">子节点名称,如果要取全部节点，传空或null均可</param>
+        </member>
+        <member name="M:ZhClass.ZhList.SetDataSource(ZhClass.SqlPar)">
+            <summary>
+            查询语句设置数据源
+            </summary>
+            <exception cref="!:IsPaging=true,必须设置CSql参数"/>
+            <param name="par">查询类</param>
+        </member>
+        <member name="M:ZhClass.ZhList.SetPagingParamenters(System.Collections.Generic.List{ZhClass.SqlPar.Parameter})">
+            <summary>
+            填充分页的三项参数并赋值
+            </summary>
+            <param name="parameter">查询参数</param>
+        </member>
+        <member name="M:ZhClass.ZhList.Back">
+            <summary>
+            上一页
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.ZhList.Left">
+            <summary>
+            左边固定显示内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.ZhList.CurrentToLeft">
+            <summary>
+            中间往左显示内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.ZhList.NowPage">
+            <summary>
+            当前页
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.ZhList.CurrentToRight">
+            <summary>
+            中间往右显示内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.ZhList.Right">
+            <summary>
+            右边固定显示内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.ZhList.Next">
+            <summary>
+            下一页
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.ZhList.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            重写控件输出内容
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:ZhClass.ZhList.OnDataBinding(System.EventArgs)">
+            <summary>
+            OnDataBinding
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:ZhClass.ZhList.CreateChildControls">
+            <summary>
+            CreateChildControls
+            </summary>
+        </member>
+        <member name="M:ZhClass.ZhList.CreateControlHierarchy(System.Boolean)">
+            <summary>
+            生成控件树
+            </summary>
+            <param name="useDataSource"></param>
+        </member>
+        <member name="M:ZhClass.ZhList.getString(System.Object[],System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String@,System.String@,System.String@)">
+            <summary>
+            返回每个单元格要显示的内容
+            </summary>
+            <param name="data">该行的数据</param>
+            <param name="text">直接显示的内容，有则忽略Field字段</param>
+            <param name="field">每个字段内容对应的数据项</param>
+            <param name="fieldlength">每个字段内容对应的显示长度，如Field有多个数字，这里也必须是对应的多个数字</param>
+            <param name="fieldnormal">每个字段内容对应的如果没有内容情况下的替代字符，如Field有多个数字，这里也必须对应有多个字符串</param>
+            <param name="fieldformat">字段格式化字符串</param>
+            <param name="stringformat">字符串格式化字符串</param>
+            <param name="href">链接地址，有则忽略HrefField字段</param>
+            <param name="hreffield">每个字段内容对应的数据项</param>
+            <param name="hrefformat">链接地址字段格式化字符串</param>
+            <param name="hrefxmlnode">链接地址XML格式化节点名称</param>
+            <param name="hrefxmlattribute">链接地址XML格式化节点属性</param>
+            <param name="title">直接显示的标题内容，如有则忽略TitleField字段</param>
+            <param name="titlefield">标题对应的字段，该属性可以是,分隔的一串数字</param>
+            <param name="titleformat">标题字段格式化字符串</param>
+            <param name="xmlnode">XML格式化节点名称</param>
+            <param name="xmlattribute">XML格式化节点属性</param>
+            <param name="wipehtml">是否要去除HTML代码</param>
+            <param name="isbr">是否要显示内容的回车换行</param>
+            <param name="returntitle">返回出来的标题内容</param>
+            <param name="returntext">返回出来的文字内容</param>
+            <param name="returnhref">返回出来链接的内容</param>
+            <returns></returns>
+        </member>
+        <member name="P:ZhClass.ZhList.Other">
+            <summary>
+            其它要增加的内容
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.Alternat">
+            <summary>
+            交替项样式,必须是,分隔的字符串,具体要根据交替间隔来定
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.NotText">
+            <summary>
+            无内容时的提示文本
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.Top">
+            <summary>
+            最大记录总数
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.CssClass">
+            <summary>
+            样式
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.DataSource">
+            <summary>
+            数据源
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.ListUL">
+            <summary>
+            声明重写项为ListUL
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.IsTable">
+            <summary>
+            是否使用表格方式
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.TopPageCssClass">
+            <summary>
+            顶部分页条样式
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.PageCssClass">
+            <summary>
+            分页条的样式
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.Fun">
+            <summary>
+            分页是要追加的函数
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.PageSize">
+            <summary>
+            PageSize 每页显示记录数
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.AroundFixed">
+            <summary>
+            前后固定显示几位
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.Displacement">
+            <summary>
+            中间往左右各显示几个
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.PageFormat">
+            <summary>
+             分页条格式化字符串
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.TopPageFormat">
+            <summary>
+             顶部分页条格式化字符串
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.BackText">
+            <summary>
+             上一页的文字
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.NextText">
+            <summary>
+             下一页的文字
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.IsPaging">
+            <summary>
+            是否要显示分页条
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.IsTopPaging">
+            <summary>
+            是否要显示分页条
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.IsSaveCount">
+            <summary>
+            是否保存总数据量(即只查一次)
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.IsReWrite">
+            <summary>
+            是否启用url重写功能,如启用,则分析URL最后文件名加P+页码
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.IsJsTurns">
+            <summary>
+            是否启用js翻页
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.CurrentPage">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.DataCount">
+            <summary>
+            总数据量
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.PageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZhList.OutHtml">
+            <summary>
+            返回全部HTML代码
+            </summary>
+        </member>
+        <member name="T:ZhClass.ZH">
+            <summary>
+            全局静态方法类
+            </summary>
+        </member>
+        <member name="M:ZhClass.ZH.Randow(System.Int32)">
+            <summary>
+            生成由数字与字母组成的随机数
+            </summary>
+            <param name="n">要生成的随机数的位数</param>
+            <returns>处理完成的字符串</returns>
+        </member>
+        <member name="M:ZhClass.ZH.VirtualPath(System.String)">
+            <summary>
+            虚拟目录硬盘路径
+            </summary>
+            <param name="virtualpath">虚拟目录名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZhClass.ZH.SendMail(System.Net.Mail.MailAddress,System.Net.Mail.MailAddress,System.Net.Mail.MailAddress,System.Text.Encoding,System.Boolean,System.String,System.String,System.String[])">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="to">收信人</param>
+            <param name="replyto">回信地址</param>
+            <param name="sender">发信人,没有则为null,在某些邮件服务器,是不允许设置发信人为非from中指定的邮箱的</param>
+            <param name="en">邮件编码</param>
+            <param name="subject">邮件主题</param>
+            <param name="isbodyhtml">是否用html发送</param>
+            <param name="body">邮件内容</param>
+            <param name="appendix">附件路径集合,不要以\\开头,中间用\\,从根目录起的路径</param>
+        </member>
+        <member name="M:ZhClass.ZH.SendMail(System.Net.Mail.MailAddress[],System.Net.Mail.MailAddress,System.Net.Mail.MailAddress,System.Text.Encoding,System.Boolean,System.String,System.String)">
+            <summary>
+            发送多份邮件
+            </summary>
+            <param name="to">收信人数组</param>
+            <param name="replyto">回信地址</param>
+            <param name="sender">发信人,没有则为null,在某些邮件服务器,是不允许设置发信人为非from中指定的邮箱的</param>
+            <param name="en">邮件编码</param>
+            <param name="subject">邮件主题</param>
+            <param name="isbodyhtml">是否用html发送</param>
+            <param name="body">邮件内容</param>
+        </member>
+        <member name="P:ZhClass.ZH.path">
+            <summary>
+            定义全局硬盘路径
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZH.format">
+            <summary>
+            format
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZH.cinfo">
+            <summary>
+            cinfo
+            </summary>
+        </member>
+        <member name="P:ZhClass.ZH.RealIP">
+            <summary>
+            获取真实IP
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
