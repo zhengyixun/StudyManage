@@ -56,16 +56,9 @@ namespace STU
                 string currentdate = DateTime.Now.ToString("yyyy-MM-dd");
                 List<ManageUserMenu> m = new List<ManageUserMenu>();
                 m.Add(new ManageUserMenu() { f_name = "管理人员", name = "管理员管理", href = "Manage_Users.aspx", flag = "Manage_Users,Manage_Users_Design" });
+                m.Add(new ManageUserMenu() { f_name = "问题问卷", name = "问卷管理", href = "Topic.aspx", flag = "Topic,Topic_Design" });
+                //m.Add(new ManageUserMenu() { f_name = "用户管理", name = "玩家用户管理", href = "User.aspx", flag = "User,User_Design" });
 
-                m.Add(new ManageUserMenu() { f_name = "用户管理", name = "玩家用户管理", href = "User.aspx", flag = "User,User_Design" });
-
-                m.Add(new ManageUserMenu() { f_name = "操作管理", name = "提现审核", href = "Withdraw.aspx", flag = "Withdraw" });
-                m.Add(new ManageUserMenu() { f_name = "操作管理", name = "发布试玩", href = "AddGame.aspx", flag = "AddGame,AddGame_Design" });
-                m.Add(new ManageUserMenu() { f_name = "操作管理", name = "发布信息", href = "ReleaseMsg.aspx", flag = "ReleaseMsg,ReleaseMsg_Design" });
-                m.Add(new ManageUserMenu() { f_name = "操作管理", name = "发布攻略", href = "Strategy.aspx", flag = "Strategy,Strategy_Design" });
-                m.Add(new ManageUserMenu() { f_name = "操作管理", name = "试玩推荐", href = "DemoRecommend.aspx", flag = "DemoRecommend" });
-                m.Add(new ManageUserMenu() { f_name = "操作管理", name = "专链管理", href = "Link.aspx", flag = "Link" });
-                m.Add(new ManageUserMenu() { f_name = "操作管理", name = "图片推荐", href = "FeaturedImg.aspx", flag = "FeaturedImg,FeaturedImg_Design" });
 
                 return m;
             }

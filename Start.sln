@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{CE1F602E-2057-4A48-974B-3F7E0F619706}"
-EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "后台", "后台\", "{2EBED0C4-58E4-4F69-8C78-A985244697AA}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
@@ -71,16 +69,14 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "微信", "微信\", "{A8825
 		SlnRelativePath = "微信\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{CE1F602E-2057-4A48-974B-3F7E0F619706}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CE1F602E-2057-4A48-974B-3F7E0F619706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE1F602E-2057-4A48-974B-3F7E0F619706}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE1F602E-2057-4A48-974B-3F7E0F619706}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE1F602E-2057-4A48-974B-3F7E0F619706}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2EBED0C4-58E4-4F69-8C78-A985244697AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2EBED0C4-58E4-4F69-8C78-A985244697AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EBED0C4-58E4-4F69-8C78-A985244697AA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
@@ -93,6 +89,10 @@ Global
 		{A88258BC-B506-4655-8D77-6DE2DD72A817}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A88258BC-B506-4655-8D77-6DE2DD72A817}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{A88258BC-B506-4655-8D77-6DE2DD72A817}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{CE1F602E-2057-4A48-974B-3F7E0F619706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1F602E-2057-4A48-974B-3F7E0F619706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1F602E-2057-4A48-974B-3F7E0F619706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1F602E-2057-4A48-974B-3F7E0F619706}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

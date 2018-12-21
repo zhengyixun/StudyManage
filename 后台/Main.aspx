@@ -60,7 +60,7 @@
 </head>
 <body>
     <div id="head">
-    	<p>测绘局绘画大赛管理后台</p>
+    	<p>---------管理后台</p>
         <span>欢迎： <% =STU.Config.ManageUser.name%></span><a id="refresh" href="javascript:;">刷新</a> <a href="/Exit.ashx">退出</a>
     </div>
     <div id="left">

@@ -3,7 +3,7 @@ using System.Web;
 using System.Web.Services;
 using System.Web.SessionState;
 using ZhClass;
-
+using STU;
 
 //[Aop]
 [System.Web.Script.Services.ScriptService]
@@ -21,8 +21,6 @@ public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
         return new STU.ManageUser() { uname = uname, pass = pass }.Login(vcode);
     }
     #endregion
-
-
     #region 修改密码
     [WebMethod(EnableSession = true)]
     public bool EditPass(string oldpass, string newpass)
@@ -84,15 +82,12 @@ public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
     }
     #endregion
 
-    #region 导出学生测试报告
-    //[ZHDebug]
+
+    #region   获取问题 根据分页
     [WebMethod(EnableSession = true)]
-    public string StudentAllTest(int student_id)
+    public string GetDataByPage(int currentpage,int pagesize,string key) 
     {
-        SqlPar par = SqlXml.GetSql("ParentApp", "首页体测数据比较");
-        par.SetParValues(student_id);
-        return DB.GetArray(par).toJson(false);
+        return STU.Topic.SelectDataByPage(currentpage, pagesize, key);
     }
     #endregion
-
 }

@@ -51,6 +51,7 @@
     <Compile Include="FolderConfig.cs" />
     <Compile Include="ManageUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Topic.cs" />
     <Compile Include="UpFile.cs" />
     <Compile Include="wxAPI.cs" />
     <Compile Include="WXDownMedia.cs" />
