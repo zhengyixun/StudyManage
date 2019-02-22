@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="Js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
-    <title>测绘局绘画大赛管理后台</title>
+    <title>管理后台</title>
     <style type="text/css">
         @font-face { font-family: 'iconfont'; src: url('css/iconfont.ttf') format('truetype'); }
         .iconfont { font-family: "iconfont" !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale; }

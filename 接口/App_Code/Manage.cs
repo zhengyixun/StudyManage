@@ -82,12 +82,87 @@ public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
     }
     #endregion
 
-
-    #region   获取问题 根据分页
+    #region  查询用户列表
     [WebMethod(EnableSession = true)]
-    public string GetDataByPage(int currentpage,int pagesize,string key) 
+    public string GetUserLists(int currentpage, int pagesize, string key)
     {
-        return STU.Topic.SelectDataByPage(currentpage, pagesize, key);
+        return STU.User.GetUserList(currentpage, pagesize, key);
+    }
+    #endregion
+    #region  添加用户
+    [WebMethod(EnableSession = true)]
+    public bool AddUser(string user_name,string user_wx_num,string user_phone) {
+        return new STU.User()
+        {
+            user_name = user_name,
+            user_wx_num = user_wx_num,
+            user_phone = user_phone
+
+        }.AddWxUser();
+    }
+    #endregion
+    #region 删除单个用户
+    [WebMethod(EnableSession = true)]
+    public bool DelUser(int user_id)
+    {
+        return new STU.User()
+        {
+            user_id = user_id
+        }.DelUserC();
+    }
+    #endregion
+    #region 编辑用户信息
+    [WebMethod(EnableSession = true)]
+    public bool UpdateUser( string user_name,string user_wx_num,string user_phone, int user_id)
+    {
+        return new STU.User() {
+            user_name = user_name,
+            user_wx_num=user_wx_num,
+            user_phone=user_phone,
+            user_id = user_id,
+        }.UpdateUserInfo();
+    }
+    #endregion
+
+    #region 查询二维码
+    [WebMethod(EnableSession = true)]
+    public string GetErCodeList(int currentpage, int pagesize, string key)
+    {
+        return STU.User.GetErCodeC(currentpage, pagesize, key);
+    }
+    #endregion
+
+    #region 查询活动列表
+    [WebMethod(EnableSession = true)]
+    public string GetActivityList(int currentpage,int pagesize,string key)
+    {
+        return STU.Activity.GetActivityC(currentpage, pagesize, key);
+    }
+    #endregion
+
+
+    #region 获取报名列表
+    [WebMethod(EnableSession = true)]
+    public string GetActivitySignUpList(int currentpage, int pagesize, string key)
+    {
+        return STU.Activity.GetActivitySignUpC(currentpage, pagesize, key);
+    }
+    #endregion
+
+    #region 获取积分列表
+    [WebMethod(EnableSession = true)]
+    public string GetIntergral(int currentpage, int pagesize, string key)
+    {
+        return STU.Mall.GetIntergralC(currentpage, pagesize, key);
+    }
+    #endregion
+   
+
+    #region 获取场地列表
+    [WebMethod(EnableSession=true)]
+    public string GetSiteList(int currentpage, int pagesize, string key)
+    {
+        return STU.Site.GetSiteC(currentpage, pagesize, key);
     }
     #endregion
 }

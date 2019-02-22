@@ -532,16 +532,30 @@
 	    	return true;
     	});
     }
-    $.initform = function(obj){
-    	for(var i=0; i<obj.length; i++){
-    		var elobj = obj[i];
-    		$("#" + elobj.id).data("check",elobj).focus(function(){
-    			if(!$.check($(this).data("check"), false))
-    				return;
-    		}).blur(function(){
-    			if(!$.check($(this).data("check"), false))
-    				return;
-    		});
-    	}
+    $.initform = function (obj) {
+        for (var i = 0; i < obj.length; i++) {
+            var elobj = obj[i];
+            $("#" + elobj.id).data("check", elobj).focus(function () {
+                if (!$.check($(this).data("check"), false))
+                    return;
+            }).blur(function () {
+                if (!$.check($(this).data("check"), false))
+                    return;
+            });
+        }
+    };
+    //正则验证
+    $.checkString = function (type, str) {
+        //type 类型      wx_num 微信号  wx_phone 手机号
+        //str 需要验证的字符串
+        var reg;
+        if (type == "wx_num") {
+            reg = /^[a-zA-Z][a-zA-Z0-9_-]{5,19}$/;
+            return reg.test(str)
+        } else if (type == "wx_phone") {
+            reg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+            return reg.test(str)
+        }
     }
+
 })();

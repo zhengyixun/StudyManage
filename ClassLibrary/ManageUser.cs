@@ -185,5 +185,6 @@ namespace STU
             this.flag = obj["flag"].toString();
             return true;
         }
+
     }
 }

@@ -56,8 +56,16 @@ namespace STU
                 string currentdate = DateTime.Now.ToString("yyyy-MM-dd");
                 List<ManageUserMenu> m = new List<ManageUserMenu>();
                 m.Add(new ManageUserMenu() { f_name = "管理人员", name = "管理员管理", href = "Manage_Users.aspx", flag = "Manage_Users,Manage_Users_Design" });
-                m.Add(new ManageUserMenu() { f_name = "问题问卷", name = "问卷管理", href = "Topic.aspx", flag = "Topic,Topic_Design" });
-                //m.Add(new ManageUserMenu() { f_name = "用户管理", name = "玩家用户管理", href = "User.aspx", flag = "User,User_Design" });
+               
+                m.Add(new ManageUserMenu() { f_name = "用户管理", name = "用户管理", href = "User.aspx", flag = "User,User_Design" });
+                m.Add(new ManageUserMenu() { f_name = "活动管理", name = "活动管理", href = "Activity.aspx", flag = "Activity,Activity_Design,Activity_SignUp" });
+                m.Add(new ManageUserMenu() { f_name = "活动管理", name = "报名管理", href = "Activity_SignUp.aspx", flag = "Activity,Activity_Design,Activity_SignUp" });
+
+                m.Add(new ManageUserMenu() { f_name = "场地管理", name = "场地管理", href = "Site.aspx", flag = "Site" });
+
+                m.Add(new ManageUserMenu() { f_name = "积分管理", name = "积分管理", href = "Intergral.aspx", flag = "Intergral" });
+
+                m.Add(new ManageUserMenu() { f_name = "验证码管理", name = "验证码管理", href = "Er_Code.aspx", flag = "Er_Code" });
 
 
                 return m;

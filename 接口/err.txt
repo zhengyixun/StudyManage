@@ -1,4 +1,124 @@
 
+---2019-02-15 17:39:42---
+GetArray异常:
+declare @t3 int='10'
+declare @t2 int='0'
+select user_id,dbo.encode(user_name) as user_name,user_wx_name,user_wx_num,user_phone,openid,format(user_create_time,'yyyy-MM-dd HH:mm') as user_create_time
+, COUNT(*) OVER() TOTAL from user where 1=1  order by user_create_time offset @t2 row fetch next @t3 row only
+;
+错误信息:System.Data.SqlClient.SqlException (0x80131904): 关键字 'user' 附近有语法错误。
+在 FETCH 语句中选项 next 的用法无效。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 ZhClass.DB.GetArray(SqlPar par, String connectionString)
+ClientConnectionId:1bdc5b0e-fd8e-47ae-9746-5e318436e6e6
+Error Number:156,State:1,Class:15;
+
+---2019-02-15 17:30:56---
+Error:System.ArgumentException: 未知 Web 方法 GetUserLists。
+参数名: methodName
+   在 System.Web.Script.Services.WebServiceData.GetMethodData(String methodName)
+   在 System.Web.Script.Services.RestHandler.CreateHandler(WebServiceData webServiceData, String methodName)
+   在 System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+---2019-02-15 17:28:00---
+Error:System.ArgumentException: 未知 Web 方法 GetUserLists。
+参数名: methodName
+   在 System.Web.Script.Services.WebServiceData.GetMethodData(String methodName)
+   在 System.Web.Script.Services.RestHandler.CreateHandler(WebServiceData webServiceData, String methodName)
+   在 System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+---2019-02-15 17:25:30---
+Error:System.ArgumentException: 未知 Web 方法 GetUserList。
+参数名: methodName
+   在 System.Web.Script.Services.WebServiceData.GetMethodData(String methodName)
+   在 System.Web.Script.Services.RestHandler.CreateHandler(WebServiceData webServiceData, String methodName)
+   在 System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+---2019-02-15 17:22:43---
+Error:System.ArgumentException: 未知 Web 方法 GetUserList。
+参数名: methodName
+   在 System.Web.Script.Services.WebServiceData.GetMethodData(String methodName)
+   在 System.Web.Script.Services.RestHandler.CreateHandler(WebServiceData webServiceData, String methodName)
+   在 System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+---2019-02-15 17:22:05---
+Error:System.ArgumentException: 未知 Web 方法 GetUserList。
+参数名: methodName
+   在 System.Web.Script.Services.WebServiceData.GetMethodData(String methodName)
+   在 System.Web.Script.Services.RestHandler.CreateHandler(WebServiceData webServiceData, String methodName)
+   在 System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+---2019-02-15 17:19:34---
+Error:System.ArgumentException: 未知 Web 方法 GetUserList。
+参数名: methodName
+   在 System.Web.Script.Services.WebServiceData.GetMethodData(String methodName)
+   在 System.Web.Script.Services.RestHandler.CreateHandler(WebServiceData webServiceData, String methodName)
+   在 System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+---2018-12-27 17:40:48---
+Error:System.InvalidOperationException: 因 URL 意外地以“/UpdateTopicState”结束，请求格式无法识别。
+   在 System.Web.Services.Protocols.WebServiceHandlerFactory.CoreGetHandler(Type type, HttpContext context, HttpRequest request, HttpResponse response)
+   在 System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   在 System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+---2018-12-27 16:40:05---
+Error:System.InvalidOperationException: 因 URL 意外地以“/GetTopicById”结束，请求格式无法识别。
+   在 System.Web.Services.Protocols.WebServiceHandlerFactory.CoreGetHandler(Type type, HttpContext context, HttpRequest request, HttpResponse response)
+   在 System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   在 System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+---2018-12-27 16:39:54---
+Error:System.InvalidOperationException: 因 URL 意外地以“/GetTopicById”结束，请求格式无法识别。
+   在 System.Web.Services.Protocols.WebServiceHandlerFactory.CoreGetHandler(Type type, HttpContext context, HttpRequest request, HttpResponse response)
+   在 System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   在 System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+---2018-12-27 16:38:57---
+Error:System.InvalidOperationException: 因 URL 意外地以“/GetTopicById”结束，请求格式无法识别。
+   在 System.Web.Services.Protocols.WebServiceHandlerFactory.CoreGetHandler(Type type, HttpContext context, HttpRequest request, HttpResponse response)
+   在 System.Web.Services.Protocols.WebServiceHandlerFactory.GetHandler(HttpContext context, String verb, String url, String filePath)
+   在 System.Web.Script.Services.ScriptHandlerFactory.GetHandler(HttpContext context, String requestType, String url, String pathTranslated)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
 ---2018-12-21 15:46:11---
 GetArray异常:
 declare @t3 int='5'

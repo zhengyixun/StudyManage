@@ -37,13 +37,7 @@
 			<div id="pager"></div>
 		</div>
 		<script type="text/javascript">
-            $.ajax_({
-                method: "GetDataByPage",
-                data: { currentpage: 1, pagesize: 5, key: "" },
-                success: function (e) {
-                    console.log(e.d)
-                }
-            })
+            
 
 			$("#search .btn_search").click(function(){
 				location.href = $.setRequest({

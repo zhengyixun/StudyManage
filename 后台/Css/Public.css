@@ -12,7 +12,7 @@ h6 { display: none; font-weight: normal; position: absolute; margin: 0; padding:
         h6.top:after { border-top-color: #666666; bottom: -12px; }
     h6.bottom { top: 100%; margin-top: 6px; }
         h6.bottom:after { border-bottom-color: #666666; top: -12px; }
-    h6.right { left: 100%; top: 0%; }
+    h6.right { left: 210px; top: 0%; margin-top:8px}
         h6.right:after { border-right-color: #666666; left: -12px; }
     h6.left { right: 100%; top: 0%; }
         h6.left:after { border-left-color: #666666; }
@@ -116,3 +116,6 @@ label.slide input[type=checkbox]:checked + span:after { content: '\e670'; }
 #dialogdiv #dialog #dialog_title i { font-family: iconfont; font-style: normal; display: block; float: right; }
 #dialogdiv #dialog #dialog_title i:hover { opacity: 0.8; cursor: pointer; }
 #dialogdiv #dialog #dialog_body { position: absolute; top: 40px; bottom: 0; left: 0; right: 0; }
+#pager > span{
+    cursor:pointer
+}
