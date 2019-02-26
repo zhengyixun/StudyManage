@@ -1,0 +1,13 @@
+.up.highlight { border:1px dashed #ff8181!important; }
+.up.highlight1 { border:1px solid red!important; }
+.up { position: relative; float: left; border:1px dashed #555; width: 300px; height: 30px; display: block; }
+    .up div { position: absolute; left: 0; top:0; right:0; bottom:0; overflow:hidden; }
+    .up input{ width: 100%; height: 100%; overflow:hidden; opacity: 0; padding:0; margin:0; }
+    .up span { display:block; line-height:30px; width:100%; height: 100%; text-align:center; position:absolute; }
+    .up span i { display:block; height:100%; background-color: rgba(11,101,225,.5); top: 0; position:absolute; }
+.up + div { width:220px; height:220px; margin: 10px 0 0px 0; display:block; float:left; clear: left; position: relative; }
+.up + div strong { font-weight:normal; position: absolute; right:0px; z-index: 3; }
+.up + div strong:after { content: "\e646"; font-family: iconfont; font-size: 20px; }
+.up + div p { margin: 0; line-height: 100%; text-align: center; height: 100%; position: relative; background-repeat:no-repeat; background-position:center; background-size:contain; }
+.up + div p video { width: 100%; height: 100%; }
+.up + div p.uped:after { content:''; position: absolute; left: 0; width:100%; height:100%; z-index:10; pointer-events:none; background-image:url(/img/done.png); background-position:center; background-repeat:no-repeat; background-color:rgba(0,0,0,0.2); }

@@ -150,6 +150,9 @@ public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
     #endregion
 
     #region 获取积分列表
+    /// <param name="currentpage">页码</param>
+    /// <param name="pagesize">每页数量</param>
+    /// <param name="key">关键词搜索</param>
     [WebMethod(EnableSession = true)]
     public string GetIntergral(int currentpage, int pagesize, string key)
     {
@@ -163,6 +166,43 @@ public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
     public string GetSiteList(int currentpage, int pagesize, string key)
     {
         return STU.Site.GetSiteC(currentpage, pagesize, key);
+    }
+    #endregion
+    #region 添加场地
+    [WebMethod(EnableSession = true)]
+    public bool AddSite(string site_name,string site_area,string site_img,string site_using_time_total)
+    {
+        return new STU.Site()
+        {
+            site_name= site_name,
+            site_area= site_area,
+            site_img= site_img,
+            site_using_time_total= site_using_time_total
+        }.AddSiteC();
+    }
+    #endregion
+    #region 编辑场地
+    [WebMethod(EnableSession = true)]
+    public bool UpdateSite(string site_name, string site_area, string site_img, string site_using_time_total,string site_id)
+    {
+        return new STU.Site()
+        {
+            site_name = site_name,
+            site_area = site_area,
+            site_img = site_img,
+            site_using_time_total = site_using_time_total,
+            site_id=site_id
+        }.UpdateSiteC();
+    }
+    #endregion
+    #region 删除场地
+    [WebMethod(EnableSession =true)]
+    public bool DelSite(string site_id)
+    {
+        return new STU.Site()
+        {
+            site_id = site_id
+        }.DelSiteC();
     }
     #endregion
 }

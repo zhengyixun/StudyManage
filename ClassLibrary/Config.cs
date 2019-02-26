@@ -61,7 +61,7 @@ namespace STU
                 m.Add(new ManageUserMenu() { f_name = "活动管理", name = "活动管理", href = "Activity.aspx", flag = "Activity,Activity_Design,Activity_SignUp" });
                 m.Add(new ManageUserMenu() { f_name = "活动管理", name = "报名管理", href = "Activity_SignUp.aspx", flag = "Activity,Activity_Design,Activity_SignUp" });
 
-                m.Add(new ManageUserMenu() { f_name = "场地管理", name = "场地管理", href = "Site.aspx", flag = "Site" });
+                m.Add(new ManageUserMenu() { f_name = "场地管理", name = "场地管理", href = "Site.aspx", flag = "Site,Site_Design" });
 
                 m.Add(new ManageUserMenu() { f_name = "积分管理", name = "积分管理", href = "Intergral.aspx", flag = "Intergral" });
 
