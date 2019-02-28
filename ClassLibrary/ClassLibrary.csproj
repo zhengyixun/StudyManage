@@ -50,11 +50,13 @@
     <Compile Include="Config.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="FolderConfig.cs" />
+    <Compile Include="Version.cs" />
     <Compile Include="Mall.cs" />
     <Compile Include="ManageUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.cs" />
     <Compile Include="UpFile.cs" />
+    <Compile Include="UpXLS.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

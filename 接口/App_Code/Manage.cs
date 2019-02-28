@@ -10,7 +10,9 @@ using STU;
 [WebService]
 public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
 {
-
+    public string img { get; set; }
+    public string msg { get; set; }
+    public string name { get; set; }
     public void ProcessRequest(HttpContext context) { }
     public bool IsReusable { get { return false; } }
 
@@ -170,20 +172,21 @@ public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
     #endregion
     #region 添加场地
     [WebMethod(EnableSession = true)]
-    public bool AddSite(string site_name,string site_area,string site_img,string site_using_time_total)
+    public bool AddSite(string site_name,string site_area,string site_img,string site_using_time_total,string site_desc)
     {
         return new STU.Site()
         {
             site_name= site_name,
             site_area= site_area,
             site_img= site_img,
-            site_using_time_total= site_using_time_total
+            site_using_time_total= site_using_time_total,
+            site_desc = site_desc
         }.AddSiteC();
     }
     #endregion
     #region 编辑场地
     [WebMethod(EnableSession = true)]
-    public bool UpdateSite(string site_name, string site_area, string site_img, string site_using_time_total,string site_id)
+    public bool UpdateSite(string site_name, string site_area, string site_img, string site_using_time_total,string site_desc,string site_id)
     {
         return new STU.Site()
         {
@@ -191,7 +194,8 @@ public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
             site_area = site_area,
             site_img = site_img,
             site_using_time_total = site_using_time_total,
-            site_id=site_id
+            site_desc= site_desc,
+            site_id =site_id
         }.UpdateSiteC();
     }
     #endregion
@@ -203,6 +207,53 @@ public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
         {
             site_id = site_id
         }.DelSiteC();
+    }
+    #endregion
+
+
+
+    #region 获取版本信息
+    [WebMethod(EnableSession = true)]
+    public string GetVersionList(int currentpage, int pagesize, string key)
+    {
+        return STU.Version.GetVersionC(currentpage, pagesize, key);
+    }
+    #endregion
+
+
+    #region 添加图片
+    [WebMethod(EnableSession = true)]
+    // 添加绘本视频
+    public string AddImg(string _img)
+    {
+        string mp = STU.Config.folder.UpLoad.MapPath();
+        this.img = Guid.NewGuid().ToString("N") + System.IO.Path.GetExtension(_img); System.Threading.Thread.Sleep(10);
+        if (!STU.FolderConfig.MoveFile(_img, this.img, mp)) { return "封面上传失败"; };
+
+        SqlPar par = SqlXml.GetSql("Uploads", "添加图片");
+        par.SetParValues(this.name, this.msg, this.img);
+        return DB.ExeSql(par) > 0 ? "" : "添加失败";
+    }
+    #endregion
+    #region 修改图片
+    [WebMethod(EnableSession = true)]
+    public string UpdateImg(string _oldImg)
+    {
+        string mp = STU.Config.folder.UpLoad.MapPath();
+        if (this.img != "" && this.img != _oldImg)
+        {
+            string new_img = Guid.NewGuid().ToString("N") + System.IO.Path.GetExtension(_oldImg); System.Threading.Thread.Sleep(10);
+            if (!STU.FolderConfig.MoveFile(this.img, new_img, mp)) return "封面上传失败";
+            if (!_oldImg.IsNullOrEmpty()) System.IO.File.Delete(mp + _oldImg);
+            this.img = new_img;
+        }
+        else
+        {
+            this.img = _oldImg;
+        }
+        SqlPar par = SqlXml.GetSql("Uploads", "编辑图片");
+        par.SetParValues(this.name, this.msg, this.img);
+        return DB.ExeSql(par) > 0 ? "" : "编辑失败";
     }
     #endregion
 }

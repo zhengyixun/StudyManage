@@ -23,9 +23,16 @@
 		<table cellpadding="1" cellspacing="1">
 			<thead>
 				<tr>
-					<td>手机号</td>
-					<td>验证码</td>
-                    <td>用户创建时间</td>
+					<td>编号</td>
+					<td>创建者姓名</td>
+                    <td>活动名称</td>
+                    <td>人数限制</td>
+					<td>活动场地</td>
+                    <td>活动时间</td>
+                    <td>报名截止时间</td>
+                    <td>活动状态</td>
+					<td>申请时间</td>
+                    <td>操作</td>
 				</tr>
 			</thead>
 			<tbody></tbody>
@@ -39,15 +46,55 @@
                     method: "GetActivityList",
                     data: { currentpage, pagesize, key },
                     success: function (e) {
-                        console.log(e.d);
                         var data = JSON.parse(e.d);
+                        var d_count = Math.ceil(data.count / 10);
+                        for (var i = 0; i < d_count; i++) {
+                            $("<span>").text(i + 1).appendTo($("#pager"))
+                        }
+                        data.list.forEach(function (item, index) {
+                            console.log(item);
+                            if (item.activity_state == "0") {
+                                item.activity_state = "待审核 "
+                            } else if (item.activity_state == "1") {
+                                item.activity_state = "已通过"
+                            } else if (item.activity_state == "2") {
+                                item.activity_state = "未通过"
+                            } else if (item.activity_state == "3") {
+                                item.activity_state = "已作废"
+                            } else if (item.activity_state == "4") {
+                                item.activity_state = "举办成功"
+                            } else if (item.activity_state == "5") {
+                                item.activity_state = "举办失败"
+                            } else {
+                                item.activity_state = "错误"
+                            }
+                            $("<tr>").html(`
+                                <td>${data.count - index}</td>
+					            <td>${item.activity_creater_name}</td>
+                                <td>${item.activity_name}</td>
+                                <td>${item.activity_min_people}/${item.activity_max_people}</td>
+					            <td>${item.activity_address}</td>
+                                <td>${item.activity_start_time}/${item.activity_end_time}</td>
+                                <td>${item.activity_signup_end_time}</td>
+                                <td>${item.activity_state}</td>
+					            <td>${item.activity_create_time}</td>
+                                <td>
+                                    <a class="btn b btn_edit" href="#">编辑</a>
+                                    <a class="btn b btn_del" href="#" activity_id="${item.activity_id}">删除</a>
+                                </td>
+                            `).appendTo($("tbody"));
+                        })
                     },
                     error: function (e) {
                         console.log("错误信息" + e)
                     }
                 })
             }
-            GetActivityList(1,10,"")
+            GetActivityList(1, 10, "");
+            //翻页
+            $("#pager").on("click", "span", function () {
+                GetActivityList($(this).text(), 10, "");
+            })
         })
     </script>
 </body>

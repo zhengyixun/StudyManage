@@ -138,10 +138,10 @@
 	                success: function (data) {
 	                	progress.css("background-color","transparent");
 	                	if(obj.btn)
-                            obj.btn.removeAttr("disabled");
-                        if (JSON.parse(data).filename !== ""){
+	                		obj.btn.removeAttr("disabled");
+	                    if (data == "true"){
 	                    	up.find("p").addClass("uped");
-                            ret.value = JSON.parse(data).filename;
+	                    	ret.value = ret.pic.name;
 	                    }
 	                },
 	                err: function (err) {

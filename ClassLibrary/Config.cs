@@ -67,7 +67,7 @@ namespace STU
 
                 m.Add(new ManageUserMenu() { f_name = "验证码管理", name = "验证码管理", href = "Er_Code.aspx", flag = "Er_Code" });
 
-
+                m.Add(new ManageUserMenu() { f_name = "版本管理", name = "版本管理", href = "Version.aspx", flag = "Version" });
                 return m;
             }
         }

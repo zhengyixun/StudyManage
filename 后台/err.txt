@@ -1,6 +1,60 @@
 
----2019-02-26 15:18:26---
-Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”。
+---2019-02-26 17:22:32---
+System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Permissions.FileIOPermission.EmulateFileIOPermissionChecks(String fullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode)
+   在 System.Web.HttpPostedFile.SaveAs(String filename)
+   在 STU.UpFile.ProcessRequest(HttpContext context) 位置 D:\工作\Stu\ClassLibrary\UpFile.cs:行号 28
+
+---2019-02-26 17:22:10---
+System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Permissions.FileIOPermission.EmulateFileIOPermissionChecks(String fullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode)
+   在 System.Web.HttpPostedFile.SaveAs(String filename)
+   在 STU.UpFile.ProcessRequest(HttpContext context) 位置 D:\工作\Stu\ClassLibrary\UpFile.cs:行号 28
+
+---2019-02-26 17:20:55---
+System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Permissions.FileIOPermission.EmulateFileIOPermissionChecks(String fullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode)
+   在 System.Web.HttpPostedFile.SaveAs(String filename)
+   在 STU.UpFile.ProcessRequest(HttpContext context) 位置 D:\工作\Stu\ClassLibrary\UpFile.cs:行号 28
+
+---2019-02-26 17:19:23---
+System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Permissions.FileIOPermission.EmulateFileIOPermissionChecks(String fullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode)
+   在 System.Web.HttpPostedFile.SaveAs(String filename)
+   在 STU.UpFile.ProcessRequest(HttpContext context) 位置 D:\工作\Stu\ClassLibrary\UpFile.cs:行号 28
+
+---2019-02-26 17:18:34---
+System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Permissions.FileIOPermission.EmulateFileIOPermissionChecks(String fullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode)
+   在 System.Web.HttpPostedFile.SaveAs(String filename)
+   在 STU.UpFile.ProcessRequest(HttpContext context) 位置 D:\工作\Stu\ClassLibrary\UpFile.cs:行号 28
+
+---2019-02-26 17:17:49---
+System.NotSupportedException: 不支持给定路径的格式。
+   在 System.Security.Permissions.FileIOPermission.EmulateFileIOPermissionChecks(String fullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode)
+   在 System.Web.HttpPostedFile.SaveAs(String filename)
+   在 STU.UpFile.ProcessRequest(HttpContext context) 位置 D:\工作\Stu\ClassLibrary\UpFile.cs:行号 28
+
+---2019-02-26 16:17:15---
+Error:System.Web.HttpException (0x80004005): 未能加载类型“CHJ.UpFile”。
    在 System.Web.Compilation.BuildManager.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase)
    在 System.Web.Configuration.HandlerFactoryCache.GetTypeWithAssert(String type)
    在 System.Web.Configuration.HandlerFactoryCache.GetHandlerType(String type)
@@ -10,8 +64,8 @@ Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”�
    在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
----2019-02-26 15:04:31---
-Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”。
+---2019-02-26 16:16:39---
+Error:System.Web.HttpException (0x80004005): 未能加载类型“CHJ.UpFile”。
    在 System.Web.Compilation.BuildManager.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase)
    在 System.Web.Configuration.HandlerFactoryCache.GetTypeWithAssert(String type)
    在 System.Web.Configuration.HandlerFactoryCache.GetHandlerType(String type)
@@ -21,8 +75,8 @@ Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”�
    在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
----2019-02-26 15:03:01---
-Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”。
+---2019-02-26 16:13:40---
+Error:System.Web.HttpException (0x80004005): 未能加载类型“CHJ.UpFile”。
    在 System.Web.Compilation.BuildManager.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase)
    在 System.Web.Configuration.HandlerFactoryCache.GetTypeWithAssert(String type)
    在 System.Web.Configuration.HandlerFactoryCache.GetHandlerType(String type)
@@ -32,8 +86,8 @@ Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”�
    在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
----2019-02-26 14:53:45---
-Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”。
+---2019-02-26 16:13:34---
+Error:System.Web.HttpException (0x80004005): 未能加载类型“CHJ.UpFile”。
    在 System.Web.Compilation.BuildManager.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase)
    在 System.Web.Configuration.HandlerFactoryCache.GetTypeWithAssert(String type)
    在 System.Web.Configuration.HandlerFactoryCache.GetHandlerType(String type)
@@ -43,139 +97,13 @@ Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”�
    在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
----2019-02-26 14:50:29---
-Error:System.Web.HttpException (0x80004005): 文件“/UpFile.ashx”不存在。
-   在 System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
-   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
-   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
-   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
----2019-02-26 14:41:26---
-Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”。
+---2019-02-26 16:00:45---
+Error:System.Web.HttpException (0x80004005): 未能加载类型“CS.UpFile”。
    在 System.Web.Compilation.BuildManager.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase)
    在 System.Web.Configuration.HandlerFactoryCache.GetTypeWithAssert(String type)
    在 System.Web.Configuration.HandlerFactoryCache.GetHandlerType(String type)
    在 System.Web.Configuration.HandlerFactoryCache..ctor(String type)
    在 System.Web.HttpApplication.GetFactory(String type)
-   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
-   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
----2019-02-26 14:38:45---
-Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”。
-   在 System.Web.Compilation.BuildManager.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase)
-   在 System.Web.Configuration.HandlerFactoryCache.GetTypeWithAssert(String type)
-   在 System.Web.Configuration.HandlerFactoryCache.GetHandlerType(String type)
-   在 System.Web.Configuration.HandlerFactoryCache..ctor(String type)
-   在 System.Web.HttpApplication.GetFactory(String type)
-   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
-   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
----2019-02-26 14:35:21---
-Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”。
-   在 System.Web.Compilation.BuildManager.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase)
-   在 System.Web.Configuration.HandlerFactoryCache.GetTypeWithAssert(String type)
-   在 System.Web.Configuration.HandlerFactoryCache.GetHandlerType(String type)
-   在 System.Web.Configuration.HandlerFactoryCache..ctor(String type)
-   在 System.Web.HttpApplication.GetFactory(String type)
-   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
-   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
----2019-02-26 14:34:51---
-Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”。
-   在 System.Web.Compilation.BuildManager.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase)
-   在 System.Web.Configuration.HandlerFactoryCache.GetTypeWithAssert(String type)
-   在 System.Web.Configuration.HandlerFactoryCache.GetHandlerType(String type)
-   在 System.Web.Configuration.HandlerFactoryCache..ctor(String type)
-   在 System.Web.HttpApplication.GetFactory(String type)
-   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
-   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
----2019-02-26 14:32:28---
-Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”。
-   在 System.Web.Compilation.BuildManager.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase)
-   在 System.Web.Configuration.HandlerFactoryCache.GetTypeWithAssert(String type)
-   在 System.Web.Configuration.HandlerFactoryCache.GetHandlerType(String type)
-   在 System.Web.Configuration.HandlerFactoryCache..ctor(String type)
-   在 System.Web.HttpApplication.GetFactory(String type)
-   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
-   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
----2019-02-26 14:26:55---
-Error:System.Web.HttpException (0x80004005): 未能加载类型“SZ.UpFile”。
-   在 System.Web.Compilation.BuildManager.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase)
-   在 System.Web.Configuration.HandlerFactoryCache.GetTypeWithAssert(String type)
-   在 System.Web.Configuration.HandlerFactoryCache.GetHandlerType(String type)
-   在 System.Web.Configuration.HandlerFactoryCache..ctor(String type)
-   在 System.Web.HttpApplication.GetFactory(String type)
-   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
-   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
----2019-02-18 17:07:01---
-Error:System.Web.HttpException (0x80004005): 文件“/Users_Design.aspx”不存在。
-   在 System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
-   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
-   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
-   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
----2019-02-15 15:14:48---
-Error:System.Web.HttpException (0x80004005): 文件“/Topic.aspx”不存在。
-   在 System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
-   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
-   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
-   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
----2018-12-27 10:03:30---
-Error:System.Web.HttpException (0x80004005): 文件“/User.aspx”不存在。
-   在 System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
-   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
-   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
-   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
----2018-12-27 10:03:22---
-Error:System.Web.HttpException (0x80004005): 文件“/User.aspx”不存在。
-   在 System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
-   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
-   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
-   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-
----2018-12-27 10:02:06---
-Error:System.Web.HttpException (0x80004005): 文件“/User.aspx”不存在。
-   在 System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
-   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
-   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
-   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
    在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    在 System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
    在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)

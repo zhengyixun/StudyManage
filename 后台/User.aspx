@@ -26,6 +26,7 @@
 					<tr>
 						<td class="li1">姓名</td>
 						<td class="li2">微信昵称</td>
+                        <td>头像</td>
 						<td class="li3">手机号</td>
 						<td class="li6">微信号</td>
 						<td class="li6">openid</td>
@@ -59,6 +60,7 @@
                             $("<tr>").html(`
                                 <td>${$.Base64Decode(item.user_name)}</td>
                                 <td>${item.user_wx_name}</td>
+                                <td>${item.user_wx_img}</td>
                                 <td>${item.user_phone}</td>
                                 <td>${item.user_wx_num}</td>
                                 <td>${item.openid}</td>
@@ -77,8 +79,6 @@
             $("#pager").on("click", "span", function () {
                 GetUserData($(this).text(), 10, '')
             })
-
-
 
             //删除单挑用户数据
             $("tbody").on("click", ".btn_del", function () {

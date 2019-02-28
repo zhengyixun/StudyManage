@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script src="Js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="Js/Extensions.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Js/UpFile.js"></script>
 	<link rel="stylesheet" type="text/css" href="Css/Public.css" />
     <link href="Css/UpFile.css" rel="stylesheet" />
     <title>场地</title>
@@ -21,7 +22,13 @@
         td{position:relative}
         h6.right { left: 210px; margin-top: 6px;}
         #up > span{display:block;width:200px;height:60px;line-height:60px;border:1px dashed #ccc;box-sizing:border-box;text-align:center}
-
+        #up{
+            position:relative;
+        }
+        #up > img{
+            width:50px;height:50px;
+            position:absolute;right:230px;top:1px;
+        }
 	</style>
 </head>
 <body>
@@ -40,13 +47,20 @@
 				<td class="left" width="200">场地面积</td>
 				<td><input type="text" id="site_area" /><h6 class="right" for="site_area">*</h6></td>
 			</tr>
-            <tr>
+            <tr style="display:none">
 				<td class="left" width="200">可用时间段</td>
 				<td><input type="text" id="site_using_time_total" /><h6 class="right" for="site_using_time_total">*</h6></td>
 			</tr>
             <tr>
+				<td class="left" width="200">备注</td>
+				<td><textarea rows='5' cols="50" id="site_desc"></textarea></td>
+			</tr>
+            <tr>
 				<td class="left top">上传图片</td>
-				<td id="up" class="top"></td>
+				<td id="up" class="top">
+                    <h6 class="right" for="up"></h6>
+                    <img src="#"/>
+				</td>
 			</tr>
             <tr>
 				<td class="left"></td>
@@ -55,16 +69,15 @@
         </table>
     </div>
     <%-- 上传的js --%>
-    <script src="Js/UpFile.js"></script>
     <script>
         $(function () {
             //上传的js
             var up = $.upfile({ el: $("#up"), accept: "image/jpeg,image/jpg,image/png", btn: $("#save"), mw: 270, mh: 190 });
-
-
+            var imgFileName;
             $("input").focus(function () { $(this).siblings(".right").css("display","none")});
-            
             $("#save").click(function () {
+                console.log("++++" + JSON.stringify(up));
+                imgFileName = up.value;//图片的文件名
                 if ($("#site_name").val() == "") {
                     $("#site_name").siblings(".right").css("display", "block").text("请输入场地名称");
                     return
@@ -77,9 +90,7 @@
                     $("#site_using_time_total").siblings(".right").css("display", "block").text("请输入可用时间段");
                     return
                 }
-
                 <%="site_id".getRequest().IsNullOrEmpty()?"add":"upd"%>(); //判断 执行哪个方法
-                
             });
             function upd() {  //编辑的方法
                 $.ajax_({
@@ -87,38 +98,43 @@
                     data: {
                         site_name: $("#site_name").val(),
                         site_area: $("#site_area").val(),
-                        site_img: "",
+                        site_img: imgFileName==""?$.getRequest("site_img"):imgFileName, //如果imgFileName为空，代表不修改，不为空代表已修改
                         site_using_time_total: $("#site_using_time_total").val(),
+                        site_desc:$("#site_desc").val(),///备注
                         site_id:$.getRequest("site_id")
                     },
                     success: function (e) {
                         if (e.d == true) {
                             alert("修改成功");
                             location.href = "Site.aspx";
+                            imgFileName = "";
                         }
                     },
                     error: function (e) {
                         console.log("错误信息：" +e)
                     }
                 })
-
             }
             function add() {  //添加的方法
+                if (imgFileName == "") { //添加的时候  图片必须上传
+                    $("#up").children(".right").css("display", "block").text("请上传图片");
+                    return
+                }
                 $.ajax_({
                     method: "AddSite",
                     data: {
                         site_name: $("#site_name").val(),
                         site_area: $("#site_area").val(),
-                        site_img: "",
+                        site_img: imgFileName,
                         site_using_time_total: $("#site_using_time_total").val(),
+                        site_desc:$("#site_desc").val()
                     },
                     success: function (e) {
                         console.log(e.d)
                         if (e.d == true) {
-                            $("#site_name").val("");
-                            $("#site_area").val('');
-                            $("#site_using_time_total").val("");
                             alert("添加成功");
+                            imgFileName = "";
+                            location.href = "Site.aspx";
                         }
                     },
                     error: function (e) {
@@ -129,8 +145,16 @@
 
             $("#site_name").val($.Base64Decode($.getRequest("site_name") ));
             $("#site_area").val($.Base64Decode($.getRequest("site_area")));
-            $("#site_img").val($.getRequest("site_img"));
+            
             $("#site_using_time_total").val($.getRequest("site_using_time_total"));
+            $("#site_desc").val($.Base64Decode($.getRequest("site_desc")));//备注
+            if ($.getRequest("site_img") === "") {
+                $("#up img").css("display","none")
+            } else {
+                $("#up img").css("display","block")
+                $("#up img").prop({ src:"http://studymanage.study.com/UpLoad/"+ $.getRequest("site_img") });
+            }
+            
         })
     </script>
 </body>

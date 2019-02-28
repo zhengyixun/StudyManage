@@ -14,6 +14,7 @@ namespace STU
         public string site_img { get; set; } //场地图片
         public string site_using_time_total { get; set; } //总共可使用时间段
         public string site_used_time { get; set; } //已被使用时间段
+        public string site_desc { get; set; }//备注
 
         #region 获取场地列表
         public static string GetSiteC(int currentpage, int pagesize, string key)
@@ -31,7 +32,7 @@ namespace STU
         public bool AddSiteC()
         {
             SqlPar par = SqlXml.GetSql("Site", "添加场地");
-            par.SetParValues(this.site_name, this.site_area, this.site_img,this.site_using_time_total);
+            par.SetParValues(this.site_name, this.site_area, this.site_img,this.site_using_time_total, this.site_desc);
             return DB.ExeSql(par) > 0;
         }
         #endregion
@@ -48,7 +49,7 @@ namespace STU
         {
             SqlPar par = SqlXml.GetSearchSql("Site", "编辑场地");
             par.SetParValues(
-                this.site_name, this.site_area, this.site_img, this.site_using_time_total ,this.site_id
+                this.site_name, this.site_area, this.site_img, this.site_using_time_total , this.site_desc, this.site_id
             );
             return DB.ExeSql(par) > 0;
         }

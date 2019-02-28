@@ -28,8 +28,9 @@
 					<td>场地名称</td>
 					<td>场地面积</td>
                     <td>场地图片</td>
-                    <td>可用时间段</td>
+                    <td style="display:none">可用时间段</td>
                     <td>已用时间段</td>
+                    <td>备注</td>
                     <td>操作</td>
 				</tr>
 			</thead>
@@ -59,13 +60,14 @@
                                 <td>${$.Base64Decode(item.site_name)}</td>
 					            <td>${$.Base64Decode(item.site_area)}</td>
                                 <td>
-                                    <img src="${item.site_img}" alt="暂无"/>
+                                    <img src="http://studymanage.study.com/UpLoad/${item.site_img}" alt="暂无"/>
                                 </td>
-                                <td>${item.site_using_time_total}</td>
+                                <td style="display:none">${item.site_using_time_total}</td>
                                 <td>${item.site_used_time}</td>
+                                <td>${$.Base64Decode(item.site_desc)}</td>
                                 <td>
-                                    <a class="btn b btn_edit" href="Site_Design.aspx?site_id=${item.site_id}&site_name=${item.site_name}&site_area=${item.site_area}&site_img=${item.site_img}&site_using_time_total=${item.site_using_time_total}">编辑</a>
-                                    <a class="btn b btn_del" href="#" site_id="${item.site_id}">删除</a>    
+                                    <a class="btn b btn_edit" href="Site_Design.aspx?site_id=${item.site_id}&site_name=${item.site_name}&site_area=${item.site_area}&site_img=${item.site_img}&site_using_time_total=${item.site_using_time_total}&site_desc=${item.site_desc}">编辑</a>
+                                    <a class="btn b btn_del" href="#" site_id="${item.site_id}">删除</a>
                                 </td>
                             `).appendTo($("tbody"))
                         });

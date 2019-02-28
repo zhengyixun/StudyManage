@@ -119,3 +119,6 @@ label.slide input[type=checkbox]:checked + span:after { content: '\e670'; }
 #pager > span{
     cursor:pointer
 }
+tbody >tr> td > img{
+    width:40px;height:40px
+}
