@@ -34,10 +34,7 @@
 				<td class="left" width="200">用户名称</td>
 				<td><input type="text" id="wxuser_name" /><h6 class="right" for="wxuser_name">*</h6></td>
 			</tr>
-            <tr>
-				<td class="left" width="200">微信号</td>
-				<td><input type="text" id="wxuser_wx_num" /><h6 class="right" for="wxuser_wx_num">*</h6></td>
-			</tr>
+            
             <tr>
 				<td class="left" width="200">手机号</td>
 				<td><input type="text" id="wxuser_phone" /><h6 class="right" for="wxuser_phone">*</h6></td>
@@ -50,9 +47,6 @@
     </div>
     <script>
         $(function () {
-            
-            
-            
             $("input").focus(function () { $(this).siblings(".right").css("display","none")});
             $("#wxuser_phone").blur(function () {
                 if ($.checkString("wx_phone", $(this).val()) == false) {
@@ -60,27 +54,16 @@
                     $(this).siblings(".right").css("display","block").text("手机号格式错误");
                 }
             })
-            //微信号验证
-            $("#wxuser_wx_num").blur(function () {
-                if ($.checkString("wx_num", $(this).val()) == false) {
-                    $(this).val("");
-                    $(this).siblings(".right").css("display","block").text("微信号格式错误");
-                }
-            })
+            
             $("#save").click(function () {
                 if ($("#wxuser_name").val() == "") {
                     $("#wxuser_name").siblings(".right").css("display", "block").text("请输入用户名");
-                    return
-                }
-                if ($("#wxuser_wx_num").val() == "") {
-                    $("#wxuser_wx_num").siblings(".right").css("display", "block").text("请输入微信号");
                     return
                 }
                 if ($("#wxuser_phone").val() == "") {
                     $("#wxuser_phone").siblings(".right").css("display", "block").text("请输入手机号");
                     return
                 }
-
                 <%="user_id".getRequest().IsNullOrEmpty()?"add":"upd"%>(); //判断 执行哪个方法
                 
             });
@@ -89,14 +72,17 @@
                     method: "UpdateUser",
                     data: {
                         user_name: $("#wxuser_name").val(),
-                        user_wx_num: $("#wxuser_wx_num").val(),
+                       
                         user_phone: $("#wxuser_phone").val(),
                         user_id: $.getRequest("user_id")
                     },
                     success: function (e) {
+                        console.log(e.d)
                         if (e.d == true) {
                             alert("修改成功");
                             location.href = "User.aspx";
+                        } else {
+                            alert("手机号已存在,修改失败");
                         }
                     },
                     error: function (e) {
@@ -110,7 +96,7 @@
                     method: "AddUser",
                     data: {
                         user_name: $("#wxuser_name").val(),
-                        user_wx_num: $("#wxuser_wx_num").val(),
+                        
                         user_phone: $("#wxuser_phone").val()
                     },
                     success: function (e) {
@@ -120,17 +106,17 @@
                             $("#wxuser_wx_num").val('');
                             $("#wxuser_phone").val("");
                             alert("添加成功");
+                            location.href = "User.aspx";
                         }
                     },
                     error: function (e) {
-                        console.log("错误信息" + e)
+                        console.log("错误信息" + JSON.stringify(e))
                     }
                 })
             }
 
             //console.log($.getRequest("user_id") + "------" + $.getRequest("user_wx_num") + "------" + $.getRequest("user_phone") + "------" + $.getRequest("user_name"))
             $("#wxuser_name").val($.getRequest("user_name"));
-            $("#wxuser_wx_num").val($.getRequest("user_wx_num"));
             $("#wxuser_phone").val($.getRequest("user_phone"));
         })
     </script>

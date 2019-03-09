@@ -54,13 +54,13 @@
                             $("<span>").text(i + 1).appendTo($("#pager"))
                         }
                         data.list.forEach(function (item, index) {
-                            console.log(item);
+                            
                             $("<tr>").html(`
                                 <td>${data.count - index}</td>
                                 <td>${$.Base64Decode(item.site_name)}</td>
 					            <td>${$.Base64Decode(item.site_area)}</td>
                                 <td>
-                                    <img src="http://studymanage.study.com/UpLoad/${item.site_img}" alt="暂无"/>
+                                    <img src="/UpLoad/${item.site_img}" alt="暂无"/>
                                 </td>
                                 <td style="display:none">${item.site_using_time_total}</td>
                                 <td>${item.site_used_time}</td>
@@ -69,7 +69,7 @@
                                     <a class="btn b btn_edit" href="Site_Design.aspx?site_id=${item.site_id}&site_name=${item.site_name}&site_area=${item.site_area}&site_img=${item.site_img}&site_using_time_total=${item.site_using_time_total}&site_desc=${item.site_desc}">编辑</a>
                                     <a class="btn b btn_del" href="#" site_id="${item.site_id}">删除</a>
                                 </td>
-                            `).appendTo($("tbody"))
+                            `).attr("site_id",item.site_id).appendTo($("tbody"))
                         });
                     },
                     error: function (e) {
@@ -84,21 +84,36 @@
             })
             //删除单挑----场地信息
             $("tbody").on("click", ".btn_del", function () {
-                var that = this;
-                $.ajax_({
-                    method: "DelSite",
-                    data: { site_id: $(that).attr("site_id") },
-                    success: function (e) {
-                        if (e.d == true) {
-                            alert("删除成功")
-                            $(that).parent().parent().remove()
+               makeSureDelSit($(this))
+            });
+            //确定删除的方法
+            function makeSureDelSit(this_) {
+                var oldstr = this_.parent("td").html();
+                this_.parent().empty().html(`
+                    <a class="btn b makesure" href="#">确定</a>
+                    <a class="btn b cancels" style="background:#ccc" href="#" >取消</a>
+                `);
+                $(".cancels").click(function () {
+                    $(this).parent().empty().html(oldstr);
+                });
+                $(".makesure").click(function () {
+                     var that = this;
+                    $.ajax_({
+                        method: "DelSite",
+                        data: { site_id: $(that).parent().parent().attr("site_id") },
+                        success: function (e) {
+                            if (e.d == true) {
+                                alert("删除成功")
+                                $(that).parent().parent().remove()
+                            }
+                        },
+                        error: function (e) {
+                            alert("错误信息：" + e);
                         }
-                    },
-                    error: function (e) {
-                        alert("错误信息：" + e);
-                    }
+                    })
                 })
-            })
+            }
+
         })
     </script>
 </body>

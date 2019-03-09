@@ -18,6 +18,7 @@ namespace STU
         public string openid { get; set; } //用户 openid
         public string user_state { get; set; }  //用户状态
         public string user_create_time { get; set; } //用户 创建时间
+        public string user_account_state { get; set; } //用户账号的状态
         #endregion
 
         #region 查看用户列表
@@ -36,7 +37,7 @@ namespace STU
         public bool AddWxUser()
         {
             SqlPar par = SqlXml.GetSql("User", "添加用户");
-            par.SetParValues(this.user_phone, this.user_name, this.user_wx_num);
+            par.SetParValues(this.user_phone, this.user_name);
             return DB.ExeSql(par) > 0;
         }
         #endregion
@@ -45,7 +46,7 @@ namespace STU
         {
             SqlPar par = SqlXml.GetSearchSql("User", "编辑用户信息");
             par.SetParValues(
-                this.user_name,this.user_wx_num, this.user_phone, this.user_id
+                this.user_phone, this.user_id, this.user_name
             );
             return DB.ExeSql(par) > 0;
         }
@@ -55,6 +56,16 @@ namespace STU
         {
             SqlPar par = SqlXml.GetSql("User", "删除用户");
             par.SetParValues(this.user_id);
+            return DB.ExeSql(par) > 0;
+        }
+        #endregion
+        #region 变更用户状态
+        public bool SetUserState()
+        {
+            SqlPar par = SqlXml.GetSql("User", "变更用户状态");
+            par.SetParValues(
+                 this.user_account_state, this.user_id
+             );
             return DB.ExeSql(par) > 0;
         }
         #endregion
@@ -70,7 +81,12 @@ namespace STU
                 );
             return ZH.getPageArray(par, currentpage, pagesize).toJson();
         }
+
+        public int SetUserState(object user_id)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
-       
+
     }
 }

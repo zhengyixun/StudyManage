@@ -93,11 +93,10 @@ public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
     #endregion
     #region  添加用户
     [WebMethod(EnableSession = true)]
-    public bool AddUser(string user_name,string user_wx_num,string user_phone) {
+    public bool AddUser(string user_name,string user_phone) {
         return new STU.User()
         {
             user_name = user_name,
-            user_wx_num = user_wx_num,
             user_phone = user_phone
 
         }.AddWxUser();
@@ -115,14 +114,23 @@ public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
     #endregion
     #region 编辑用户信息
     [WebMethod(EnableSession = true)]
-    public bool UpdateUser( string user_name,string user_wx_num,string user_phone, int user_id)
+    public bool UpdateUser( string user_phone, int user_id, string user_name)
     {
         return new STU.User() {
-            user_name = user_name,
-            user_wx_num=user_wx_num,
             user_phone=user_phone,
             user_id = user_id,
+            user_name = user_name,
         }.UpdateUserInfo();
+    }
+    #endregion
+    #region 变更用户状态
+    [WebMethod(EnableSession = true)]
+    public bool UserSetState(string user_account_state, int user_id)
+    {
+        return new STU.User() {
+            user_account_state = user_account_state,
+            user_id = user_id
+        }.SetUserState();
     }
     #endregion
 
@@ -141,7 +149,64 @@ public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
         return STU.Activity.GetActivityC(currentpage, pagesize, key);
     }
     #endregion
+    #region 添加活动信息
+    [WebMethod(EnableSession = true)]
+    public bool AddActivity(string activity_creater_name, string activity_name, string activity_site_id, string activity_type, string activity_min_people, string activity_max_people, string activity_con, string activity_work_con, string activity_img_vedio_url, string activity_address, string activity_start_time, string activity_end_time, string activity_signup_end_time, string activity_state)
+    {
+        return new STU.Activity()
+        {
+            activity_creater_name= activity_creater_name,
+            activity_name = activity_name,
+            activity_site_id= activity_site_id,//场地id
+            activity_type = activity_type,
+            activity_min_people= activity_min_people,
+            activity_max_people = activity_max_people,
+            activity_con = activity_con,
+            activity_work_con= activity_work_con,
+            activity_img_vedio_url= activity_img_vedio_url,
+            activity_address = activity_address,
+            activity_start_time= activity_start_time,
+            activity_end_time= activity_end_time,
+            activity_signup_end_time= activity_signup_end_time,
+            activity_state= activity_state
+        }.AddActivityC();
+    }
+    #endregion
+    #region 编辑活动信息
+    [WebMethod(EnableSession = true)]
+    public bool UpdateActivity(string activity_creater_name, string activity_name, string activity_site_id, string activity_type, string activity_min_people, string activity_max_people, string activity_con, string activity_work_con, string activity_img_vedio_url, string activity_address, string activity_start_time, string activity_end_time, string activity_signup_end_time, string activity_state, string activity_id)
+    {
+        return new STU.Activity()
+        {
+            activity_creater_name = activity_creater_name,
+            activity_name = activity_name,
+            activity_site_id = activity_site_id,//场地id
+            activity_type = activity_type,
+            activity_min_people= activity_min_people,
+            activity_max_people= activity_max_people,
+            activity_con= activity_con,
+            activity_work_con= activity_work_con,
+            activity_img_vedio_url= activity_img_vedio_url,
+            activity_address= activity_address,
+            activity_start_time= activity_start_time,
+            activity_end_time= activity_end_time,
+            activity_signup_end_time= activity_signup_end_time,
+            activity_state= activity_state,
+            activity_id= activity_id,
 
+        }.UpdateActivityC();
+    }
+    #endregion
+    #region 删除活动信息
+    [WebMethod(EnableSession = true)]
+    public bool DelActivity(string activity_id)
+    {
+        return new STU.Activity()
+        {
+            activity_id = activity_id
+        }.DelActivityC();
+    }
+    #endregion
 
     #region 获取报名列表
     [WebMethod(EnableSession = true)]
@@ -150,6 +215,8 @@ public class Manage : ZHAop, IHttpHandler, IRequiresSessionState
         return STU.Activity.GetActivitySignUpC(currentpage, pagesize, key);
     }
     #endregion
+    
+
 
     #region 获取积分列表
     /// <param name="currentpage">页码</param>

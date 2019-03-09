@@ -23,9 +23,12 @@
 		<table cellpadding="1" cellspacing="1">
 			<thead>
 				<tr>
-					<td>积分管理</td>
-					<td>积分管理</td>
-                    <td>用户创建时间</td>
+                    <td>编号</td>
+					<td>姓名</td>
+					<td>总积分</td>
+					<td>变化积分</td>
+                    <td>变化原因</td>
+                    <td>使用时间</td>
 				</tr>
 			</thead>
 			<tbody></tbody>
@@ -36,19 +39,38 @@
         $(function () {
             //获取活动信息
             function GetIntergral(currentpage, pagesize, key) {
+                $("tbody").empty();
+                $("#pager").empty();
                 $.ajax_({
                     method: "GetIntergral",
                     data: { currentpage, pagesize, key },
                     success: function (e) {
-                        console.log(e.d);
                         var data = JSON.parse(e.d);
+                        var d_count = Math.ceil(data.count / 10);
+                        for (var i = 0; i < d_count; i++) {
+                            $("<span>").text(i + 1).appendTo($("#pager"))
+                        };
+                        data.list.forEach(function (item, index) {
+                            $("<tr>").html(`
+                                <td>${d_count-index}</td>
+                                <td>${item.user_name}</td>
+                                <td>${item.intergral_total}</td>
+                                <td>${item.intergral_change_num}</td>
+                                <td>${$.Base64Decode(item.intergral_change_why)}</td>
+                                <td>${item.intergral_using_time}</td>
+                               
+                            `).attr("intergral_id",item.intergral_id).appendTo($("table tbody"))
+                        })
                     },
                     error: function (e) {
                         console.log("错误信息" + e)
                     }
                 })
             }
-            GetIntergral(1,10,"")
+            GetIntergral(1, 10, "");
+            $("#pager").on("click", "span", function () {
+                GetIntergral($(this).text(), 10, '')
+            })
         })
     </script>
 </body>

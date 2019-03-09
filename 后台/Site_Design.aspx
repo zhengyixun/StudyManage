@@ -58,7 +58,7 @@
             <tr>
 				<td class="left top">上传图片</td>
 				<td id="up" class="top">
-                    <h6 class="right" for="up"></h6>
+                    <h6 class="right" for="up" style="z-index:999;left:310px"></h6>
                     <img src="#"/>
 				</td>
 			</tr>
@@ -78,6 +78,7 @@
             $("#save").click(function () {
                 console.log("++++" + JSON.stringify(up));
                 imgFileName = up.value;//图片的文件名
+                
                 if ($("#site_name").val() == "") {
                     $("#site_name").siblings(".right").css("display", "block").text("请输入场地名称");
                     return
@@ -86,10 +87,7 @@
                     $("#site_area").siblings(".right").css("display", "block").text("请输入场地面积");
                     return
                 }
-                if ($("#site_using_time_total").val() == "") {
-                    $("#site_using_time_total").siblings(".right").css("display", "block").text("请输入可用时间段");
-                    return
-                }
+               
                 <%="site_id".getRequest().IsNullOrEmpty()?"add":"upd"%>(); //判断 执行哪个方法
             });
             function upd() {  //编辑的方法
@@ -152,7 +150,7 @@
                 $("#up img").css("display","none")
             } else {
                 $("#up img").css("display","block")
-                $("#up img").prop({ src:"http://studymanage.study.com/UpLoad/"+ $.getRequest("site_img") });
+                $("#up img").prop({ src:"/UpLoad/"+ $.getRequest("site_img") });
             }
             
         })
